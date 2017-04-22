@@ -1,0 +1,5436 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="http://www.adaltas.com/projects/node-shell">shell (v0.3.2)</a>
+</h1>
+<h4>Full features and pretty console applications</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.shell">module shell</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">shell.</span>usingDomains</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.shell">
+            function <span class="apidocSignatureSpan"></span>shell
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.EventEmitter">
+            function <span class="apidocSignatureSpan">shell.</span>EventEmitter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.NullStream">
+            function <span class="apidocSignatureSpan">shell.</span>NullStream
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.Request">
+            function <span class="apidocSignatureSpan">shell.</span>Request
+            <span class="apidocSignatureSpan">(shell, command)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.Response">
+            function <span class="apidocSignatureSpan">shell.</span>Response
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.Shell">
+            function <span class="apidocSignatureSpan">shell.</span>Shell
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.cloud9">
+            function <span class="apidocSignatureSpan">shell.</span>cloud9
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.coffee">
+            function <span class="apidocSignatureSpan">shell.</span>coffee
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.completer">
+            function <span class="apidocSignatureSpan">shell.</span>completer
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.error">
+            function <span class="apidocSignatureSpan">shell.</span>error
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.help">
+            function <span class="apidocSignatureSpan">shell.</span>help
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.history">
+            function <span class="apidocSignatureSpan">shell.</span>history
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.http">
+            function <span class="apidocSignatureSpan">shell.</span>http
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index">
+            function <span class="apidocSignatureSpan">shell.</span>index
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.init">
+            function <span class="apidocSignatureSpan">shell.</span>init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.listenerCount">
+            function <span class="apidocSignatureSpan">shell.</span>listenerCount
+            <span class="apidocSignatureSpan">(emitter, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.redis">
+            function <span class="apidocSignatureSpan">shell.</span>redis
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.router">
+            function <span class="apidocSignatureSpan">shell.</span>router
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles">
+            function <span class="apidocSignatureSpan">shell.</span>styles
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.stylus">
+            function <span class="apidocSignatureSpan">shell.</span>stylus
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.test">
+            function <span class="apidocSignatureSpan">shell.</span>test
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">shell.</span>defaultMaxListeners</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">shell.</span>NullStream.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">shell.</span>Request.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">shell.</span>Response.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">shell.</span>__super__</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">shell.</span>index.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">shell.</span>routes</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">shell.</span>start_stop</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">shell.</span>styles.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">shell.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.shell.NullStream">module shell.NullStream</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">shell.NullStream.</span>usingDomains</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.NullStream.NullStream">
+            function <span class="apidocSignatureSpan">shell.</span>NullStream
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.NullStream.EventEmitter">
+            function <span class="apidocSignatureSpan">shell.NullStream.</span>EventEmitter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.NullStream.init">
+            function <span class="apidocSignatureSpan">shell.NullStream.</span>init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.NullStream.listenerCount">
+            function <span class="apidocSignatureSpan">shell.NullStream.</span>listenerCount
+            <span class="apidocSignatureSpan">(emitter, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">shell.NullStream.</span>defaultMaxListeners</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">shell.NullStream.</span>__super__</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.shell.NullStream.prototype">module shell.NullStream.prototype</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">shell.NullStream.prototype.</span>readable</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">shell.NullStream.prototype.</span>writable</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.NullStream.prototype.constructor">
+            function <span class="apidocSignatureSpan">shell.NullStream.prototype.</span>constructor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.NullStream.prototype.destroy">
+            function <span class="apidocSignatureSpan">shell.NullStream.prototype.</span>destroy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.NullStream.prototype.destroySoon">
+            function <span class="apidocSignatureSpan">shell.NullStream.prototype.</span>destroySoon
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.NullStream.prototype.end">
+            function <span class="apidocSignatureSpan">shell.NullStream.prototype.</span>end
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.NullStream.prototype.pause">
+            function <span class="apidocSignatureSpan">shell.NullStream.prototype.</span>pause
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.NullStream.prototype.pipe">
+            function <span class="apidocSignatureSpan">shell.NullStream.prototype.</span>pipe
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.NullStream.prototype.resume">
+            function <span class="apidocSignatureSpan">shell.NullStream.prototype.</span>resume
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.NullStream.prototype.write">
+            function <span class="apidocSignatureSpan">shell.NullStream.prototype.</span>write
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.shell.Request">module shell.Request</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.Request.Request">
+            function <span class="apidocSignatureSpan">shell.</span>Request
+            <span class="apidocSignatureSpan">(shell, command)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.shell.Request.prototype">module shell.Request.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.Request.prototype.confirm">
+            function <span class="apidocSignatureSpan">shell.Request.prototype.</span>confirm
+            <span class="apidocSignatureSpan">(msg, defaultTrue, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.Request.prototype.question">
+            function <span class="apidocSignatureSpan">shell.Request.prototype.</span>question
+            <span class="apidocSignatureSpan">(questions, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.shell.Response">module shell.Response</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.Response.Response">
+            function <span class="apidocSignatureSpan">shell.</span>Response
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.Response.unstyle">
+            function <span class="apidocSignatureSpan">shell.Response.</span>unstyle
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">shell.Response.</span>__super__</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.shell.Response.prototype">module shell.Response.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.Response.prototype.constructor">
+            function <span class="apidocSignatureSpan">shell.Response.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.Response.prototype.pad">
+            function <span class="apidocSignatureSpan">shell.Response.prototype.</span>pad
+            <span class="apidocSignatureSpan">(text, length, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.Response.prototype.prompt">
+            function <span class="apidocSignatureSpan">shell.Response.prototype.</span>prompt
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.shell.index">module shell.index</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">shell.index.</span>usingDomains</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.index">
+            function <span class="apidocSignatureSpan">shell.</span>index
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.EventEmitter">
+            function <span class="apidocSignatureSpan">shell.index.</span>EventEmitter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.NullStream">
+            function <span class="apidocSignatureSpan">shell.index.</span>NullStream
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.Shell">
+            function <span class="apidocSignatureSpan">shell.index.</span>Shell
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.cloud9">
+            function <span class="apidocSignatureSpan">shell.index.</span>cloud9
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.coffee">
+            function <span class="apidocSignatureSpan">shell.index.</span>coffee
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.completer">
+            function <span class="apidocSignatureSpan">shell.index.</span>completer
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.error">
+            function <span class="apidocSignatureSpan">shell.index.</span>error
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.help">
+            function <span class="apidocSignatureSpan">shell.index.</span>help
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.history">
+            function <span class="apidocSignatureSpan">shell.index.</span>history
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.http">
+            function <span class="apidocSignatureSpan">shell.index.</span>http
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.init">
+            function <span class="apidocSignatureSpan">shell.index.</span>init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.listenerCount">
+            function <span class="apidocSignatureSpan">shell.index.</span>listenerCount
+            <span class="apidocSignatureSpan">(emitter, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.redis">
+            function <span class="apidocSignatureSpan">shell.index.</span>redis
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.router">
+            function <span class="apidocSignatureSpan">shell.index.</span>router
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.styles">
+            function <span class="apidocSignatureSpan">shell.index.</span>styles
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.stylus">
+            function <span class="apidocSignatureSpan">shell.index.</span>stylus
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.test">
+            function <span class="apidocSignatureSpan">shell.index.</span>test
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">shell.index.</span>defaultMaxListeners</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">shell.index.</span>__super__</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">shell.index.</span>routes</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.shell.index.prototype">module shell.index.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.prototype.configure">
+            function <span class="apidocSignatureSpan">shell.index.prototype.</span>configure
+            <span class="apidocSignatureSpan">(env, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.prototype.constructor">
+            function <span class="apidocSignatureSpan">shell.index.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.prototype.interface">
+            function <span class="apidocSignatureSpan">shell.index.prototype.</span>interface
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.prototype.prompt">
+            function <span class="apidocSignatureSpan">shell.index.prototype.</span>prompt
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.prototype.quit">
+            function <span class="apidocSignatureSpan">shell.index.prototype.</span>quit
+            <span class="apidocSignatureSpan">(params)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.prototype.run">
+            function <span class="apidocSignatureSpan">shell.index.prototype.</span>run
+            <span class="apidocSignatureSpan">(command)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.prototype.set">
+            function <span class="apidocSignatureSpan">shell.index.prototype.</span>set
+            <span class="apidocSignatureSpan">(setting, val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.index.prototype.use">
+            function <span class="apidocSignatureSpan">shell.index.prototype.</span>use
+            <span class="apidocSignatureSpan">(handle)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">shell.index.prototype.</span>cmds</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.shell.routes">module shell.routes</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.routes.confirm">
+            function <span class="apidocSignatureSpan">shell.routes.</span>confirm
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.routes.prompt">
+            function <span class="apidocSignatureSpan">shell.routes.</span>prompt
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.routes.shellOnly">
+            function <span class="apidocSignatureSpan">shell.routes.</span>shellOnly
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.shell.start_stop">module shell.start_stop</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.start_stop.file">
+            function <span class="apidocSignatureSpan">shell.start_stop.</span>file
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.start_stop.pid">
+            function <span class="apidocSignatureSpan">shell.start_stop.</span>pid
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.start_stop.running">
+            function <span class="apidocSignatureSpan">shell.start_stop.</span>running
+            <span class="apidocSignatureSpan">(pid, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.start_stop.start">
+            function <span class="apidocSignatureSpan">shell.start_stop.</span>start
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.start_stop.stop">
+            function <span class="apidocSignatureSpan">shell.start_stop.</span>stop
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.shell.styles">module shell.styles</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles.styles">
+            function <span class="apidocSignatureSpan">shell.</span>styles
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles.unstyle">
+            function <span class="apidocSignatureSpan">shell.styles.</span>unstyle
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.shell.styles.prototype">module shell.styles.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles.prototype.bgcolor">
+            function <span class="apidocSignatureSpan">shell.styles.prototype.</span>bgcolor
+            <span class="apidocSignatureSpan">(bgcolor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles.prototype.black">
+            function <span class="apidocSignatureSpan">shell.styles.prototype.</span>black
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles.prototype.blue">
+            function <span class="apidocSignatureSpan">shell.styles.prototype.</span>blue
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles.prototype.bold">
+            function <span class="apidocSignatureSpan">shell.styles.prototype.</span>bold
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles.prototype.color">
+            function <span class="apidocSignatureSpan">shell.styles.prototype.</span>color
+            <span class="apidocSignatureSpan">(color, text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles.prototype.cyan">
+            function <span class="apidocSignatureSpan">shell.styles.prototype.</span>cyan
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles.prototype.green">
+            function <span class="apidocSignatureSpan">shell.styles.prototype.</span>green
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles.prototype.ln">
+            function <span class="apidocSignatureSpan">shell.styles.prototype.</span>ln
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles.prototype.magenta">
+            function <span class="apidocSignatureSpan">shell.styles.prototype.</span>magenta
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles.prototype.nocolor">
+            function <span class="apidocSignatureSpan">shell.styles.prototype.</span>nocolor
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles.prototype.print">
+            function <span class="apidocSignatureSpan">shell.styles.prototype.</span>print
+            <span class="apidocSignatureSpan">(text, settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles.prototype.println">
+            function <span class="apidocSignatureSpan">shell.styles.prototype.</span>println
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles.prototype.raw">
+            function <span class="apidocSignatureSpan">shell.styles.prototype.</span>raw
+            <span class="apidocSignatureSpan">(text, settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles.prototype.red">
+            function <span class="apidocSignatureSpan">shell.styles.prototype.</span>red
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles.prototype.regular">
+            function <span class="apidocSignatureSpan">shell.styles.prototype.</span>regular
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles.prototype.reset">
+            function <span class="apidocSignatureSpan">shell.styles.prototype.</span>reset
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles.prototype.weight">
+            function <span class="apidocSignatureSpan">shell.styles.prototype.</span>weight
+            <span class="apidocSignatureSpan">(weight, text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles.prototype.white">
+            function <span class="apidocSignatureSpan">shell.styles.prototype.</span>white
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.styles.prototype.yellow">
+            function <span class="apidocSignatureSpan">shell.styles.prototype.</span>yellow
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.shell.utils">module shell.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.utils.checkPort">
+            function <span class="apidocSignatureSpan">shell.utils.</span>checkPort
+            <span class="apidocSignatureSpan">(port, host, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.utils.flatten">
+            function <span class="apidocSignatureSpan">shell.utils.</span>flatten
+            <span class="apidocSignatureSpan">(arr, ret)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.shell.utils.workspace">
+            function <span class="apidocSignatureSpan">shell.utils.</span>workspace
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.shell" id="apidoc.module.shell">module shell</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.shell" id="apidoc.element.shell.shell">
+        function <span class="apidocSignatureSpan"></span>shell
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Shell(settings) {
+  var _base, _base1, _base2, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6,
+    _this = this;
+  if (settings == null) {
+    settings = {};
+  }
+  if (!(this instanceof Shell)) {
+    return new Shell(settings);
+  }
+  EventEmitter.call(this);
+  this.tmp = {};
+  this.settings = settings;
+  if ((_ref = (_base = this.settings).prompt) == null) {
+    _base.prompt = '&gt;&gt; ';
+  }
+  if ((_ref1 = (_base1 = this.settings).stdin) == null) {
+    _base1.stdin = process.stdin;
+  }
+  if ((_ref2 = (_base2 = this.settings).stdout) == null) {
+    _base2.stdout = process.stdout;
+  }
+  this.set('env', (_ref3 = (_ref4 = this.settings.env) != null ? _ref4 : process.env.NODE_ENV) != null ? _ref3 : 'development');
+  this.set('command', typeof settings.command !== 'undefined' ? settings.command : process.argv.slice(2).join(' '));
+  this.stack = [];
+  this.styles = styles({
+    stdout: this.settings.stdout
+  });
+  process.on('beforeExit', function() {
+    return _this.emit('exit');
+  });
+  process.on('uncaughtException', function(e) {
+    _this.emit('exit', [e]);
+    _this.styles.red('Internal error, closing...').ln();
+    console.error(e.message);
+    console.error(e.stack);
+    return process.exit();
+  });
+  this.isShell = (_ref5 = this.settings.isShell) != null ? _ref5 : process.argv.length === 2;
+  if (this.isShell) {
+    this["interface"]();
+  }
+  if ((_ref6 = settings.workspace) == null) {
+    settings.workspace = utils.workspace();
+  }
+  if (settings.chdir === true) {
+    process.chdir(settings.workspace);
+  }
+  if (typeof settings.chdir === 'string') {
+    process.chdir(settings.chdir);
+  }
+  process.nextTick(function() {
+    var command, noPrompt;
+    if (_this.isShell) {
+      command = _this.set('command');
+      noPrompt = _this.set('noPrompt');
+      if (command) {
+        return _this.run(command);
+      } else if (!noPrompt) {
+        return _this.prompt();
+      }
+    } else {
+      command = _this.set('command');
+      if (command) {
+        return _this.run(command);
+      }
+    }
+  });
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.EventEmitter" id="apidoc.element.shell.EventEmitter">
+        function <span class="apidocSignatureSpan">shell.</span>EventEmitter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.NullStream" id="apidoc.element.shell.NullStream">
+        function <span class="apidocSignatureSpan">shell.</span>NullStream
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NullStream() {
+  return NullStream.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.Request" id="apidoc.element.shell.Request">
+        function <span class="apidocSignatureSpan">shell.</span>Request
+        <span class="apidocSignatureSpan">(shell, command)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Request(shell, command) {
+  this.shell = shell;
+  this.command = command;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.Response" id="apidoc.element.shell.Response">
+        function <span class="apidocSignatureSpan">shell.</span>Response
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Response(settings) {
+  this.shell = settings.shell;
+  Response.__super__.constructor.call(this, settings);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.Shell" id="apidoc.element.shell.Shell">
+        function <span class="apidocSignatureSpan">shell.</span>Shell
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Shell = function (settings){
+  console.warn('Deprecated, use `shell()` instead of `shell.Shell()`');
+  return new Shell( settings );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Shell.routes = {
+  confirm: require('./lib/routes/confirm'),
+  prompt: require('./lib/routes/prompt'),
+  shellOnly: require('./lib/routes/shellOnly')
+};
+
+Shell.Shell = function(settings){
+  console.warn('Deprecated, use `shell()` instead of `shell.<span class="apidocCodeKeywordSpan">Shell</span>()`');
+  return new Shell( settings );
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.cloud9" id="apidoc.element.shell.cloud9">
+        function <span class="apidocSignatureSpan">shell.</span>cloud9
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cloud9 = function (settings) {
+  var cmd;
+  if (settings == null) {
+    settings = {};
+  }
+  cmd = function() {
+    var args;
+    args = [];
+    args.push('-w');
+    args.push(settings.workspace);
+    if (settings.config) {
+      args.push('-c');
+      args.push(settings.config);
+    }
+    if (settings.group) {
+      args.push('-g');
+      args.push(settings.group);
+    }
+    if (settings.user) {
+      args.push('-u');
+      args.push(settings.user);
+    }
+    if (settings.action) {
+      args.push('-a');
+      args.push(settings.action);
+    }
+    if (settings.ip) {
+      args.push('-l');
+      args.push(settings.ip);
+    }
+    if (settings.port) {
+      args.push('-p');
+      args.push(settings.port);
+    }
+    return "cloud9 " + (args.join(' '));
+  };
+  return function(req, res, next) {
+    var app, _ref;
+    app = req.shell;
+    if (app.tmp.cloud9) {
+      return next();
+    }
+    app.tmp.cloud9 = true;
+    if ((_ref = settings.workspace) == null) {
+      settings.workspace = app.set('workspace');
+    }
+    if (!settings.workspace) {
+      return next(new Error('No workspace provided'));
+    }
+    settings.cmd = cmd();
+    app.cmd('cloud9 start', 'Start Cloud9', function(req, res, next) {
+      return start_stop.start(settings, function(err, pid) {
+        var ip, message, port;
+        if (err) {
+          return next(err);
+        }
+        if (!pid) {
+          res.cyan('Cloud9 already started').ln();
+          return res.prompt();
+        }
+        ip = settings.ip || '127.0.0.1';
+        port = settings.port || 3000;
+        message = "Cloud9 started http://" + ip + ":" + port;
+        res.cyan(message).ln();
+        return res.prompt();
+      });
+    });
+    app.cmd('cloud9 stop', 'Stop Cloud9', function(req, res, next) {
+      return start_stop.stop(settings, function(err, success) {
+        if (success) {
+          res.cyan('Cloud9 successfully stoped').ln();
+        } else {
+          res.magenta('Cloud9 was not started').ln();
+        }
+        return res.prompt();
+      });
+    });
+    return next();
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var app = new shell();
+app.configure(function() {
+app.use(shell.router({
+  shell: app
+}));
+app.use(shell.<span class="apidocCodeKeywordSpan">cloud9</span>({
+  shell: app,
+  ip: '0.0.0.0'
+}));
+app.use(shell.help({
+  shell: app,
+  introduction: true
+}));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.coffee" id="apidoc.element.shell.coffee">
+        function <span class="apidocSignatureSpan">shell.</span>coffee
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">coffee = function (settings) {
+  var cmd, shell, _ref;
+  if (settings == null) {
+    settings = {};
+  }
+  if (!settings.shell) {
+    throw new Error('No shell provided');
+  }
+  shell = settings.shell;
+  if ((_ref = settings.workspace) == null) {
+    settings.workspace = shell.set('workspace');
+  }
+  if (!settings.workspace) {
+    throw new Error('No workspace provided');
+  }
+  cmd = function() {
+    var args;
+    args = [];
+    if (settings.join) {
+      args.push('-j');
+      args.push(enrichFiles(settings.join));
+    }
+    args.push('-w');
+    if (settings.lint) {
+      args.push('-l');
+    }
+    if (settings.require) {
+      args.push('-r');
+      args.push(settings.require);
+    }
+    args.push('-b');
+    if (settings.output) {
+      args.push('-o');
+      args.push(enrichFiles(settings.output));
+    }
+    if (!settings.compile) {
+      settings.compile = settings.workspace;
+    }
+    if (settings.compile) {
+      args.push('-c');
+      args.push(enrichFiles(settings.compile));
+    }
+    return cmd = 'coffee ' + args.join(' ');
+  };
+  settings.cmd = cmd();
+  shell.cmd('coffee start', 'Start CoffeeScript', function(req, res, next) {
+    return start_stop.start(settings, function(err, pid) {
+      var message;
+      if (err) {
+        return next(err);
+      }
+      if (!pid) {
+        return res.cyan('Already Started').ln();
+      }
+      message = "CoffeeScript started";
+      res.cyan(message).ln();
+      return res.prompt();
+    });
+  });
+  return shell.cmd('coffee stop', 'Stop CoffeeScript', function(req, res, next) {
+    return start_stop.stop(settings, function(err, success) {
+      if (success) {
+        res.cyan('CoffeeScript successfully stoped').ln();
+      } else {
+        res.magenta('CoffeeScript was not started').ln();
+      }
+      return res.prompt();
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var app = new shell();
+app.configure(function() {
+  app.use(shell.router({
+    shell: app
+  }));
+  app.use(shell.<span class="apidocCodeKeywordSpan">coffee</span>({
+    shell: app
+  }));
+  app.use(shell.help({
+    shell: app,
+    introduction: true
+  }));
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.completer" id="apidoc.element.shell.completer">
+        function <span class="apidocSignatureSpan">shell.</span>completer
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">completer = function (settings) {
+  var shell;
+  if (!settings.shell) {
+    throw new Error('No shell provided');
+  }
+  shell = settings.shell;
+  if (!shell.isShell) {
+    return;
+  }
+  shell["interface"]().completer = function(text, cb) {
+    var command, route, routes, suggestions, _i, _len;
+    suggestions = [];
+    routes = shell.routes;
+    for (_i = 0, _len = routes.length; _i &lt; _len; _i++) {
+      route = routes[_i];
+      command = route.command;
+      if (command.substr(0, text.length) === text) {
+        suggestions.push(command);
+      }
+    }
+    return cb(false, [suggestions, text]);
+  };
+  return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+app.use(function(req, res, next){
+  app.client = require('redis').createClient()
+  next()
+});
+app.use(shell.history({
+  shell: app
+}));
+app.use(shell.<span class="apidocCodeKeywordSpan">completer</span>({
+  shell: app
+}));
+app.use(shell.redis({
+  config: 'redis.conf',
+  pidfile: 'redis.pid'
+}));
+app.use(shell.router({
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.error" id="apidoc.element.shell.error">
+        function <span class="apidocSignatureSpan">shell.</span>error
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function (settings) {
+  var shell;
+  if (!settings.shell) {
+    throw new Error('No shell provided');
+  }
+  shell = settings.shell;
+  shell.on('error', function() {});
+  return function(err, req, res, next) {
+    var k, v;
+    if (err.message) {
+      res.red(err.message).ln();
+    }
+    if (err.stack) {
+      res.red(err.stack).ln();
+    }
+    for (k in err) {
+      v = err[k];
+      if (k === 'message') {
+        continue;
+      }
+      if (k === 'stack') {
+        continue;
+      }
+      if (typeof v === 'function') {
+        continue;
+      }
+      res.magenta(k).white(': ').red(v).ln();
+    }
+    return res.prompt();
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.help" id="apidoc.element.shell.help">
+        function <span class="apidocSignatureSpan">shell.</span>help
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">help = function (settings) {
+  var shell, text;
+  if (!settings.shell) {
+    throw new Error('No shell provided');
+  }
+  shell = settings.shell;
+  shell.help = function(req, res, next) {
+    var route, routes, text, _i, _len;
+    res.cyan('Available commands:');
+    res.ln();
+    routes = shell.routes;
+    for (_i = 0, _len = routes.length; _i &lt; _len; _i++) {
+      route = routes[_i];
+      text = pad(route.command, 20);
+      if (route.description) {
+        res.cyan(text).white(route.description).ln();
+      }
+    }
+    return res.prompt();
+  };
+  shell.cmd('help', 'Show this message', shell.help.bind(shell));
+  shell.cmd('', shell.help.bind(shell));
+  if (shell.isShell &amp;&amp; settings.introduction) {
+    text = typeof settings.introduction === 'string' ? settings.introduction : 'Type "help" or press enter for a list of commands
+';
+    return shell.styles.println(text);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+app.use(shell.redis({
+  config: 'redis.conf',
+  pidfile: 'redis.pid'
+}));
+app.use(shell.router({
+  shell: app
+}));
+app.use(shell.<span class="apidocCodeKeywordSpan">help</span>({
+  shell: app,
+  introduction: true
+}));
+});
+// Command registration
+app.cmd('redis keys :pattern', 'Find keys', function(req, res, next){
+app.client.keys(req.params.pattern, function(err, keys){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.history" id="apidoc.element.shell.history">
+        function <span class="apidocSignatureSpan">shell.</span>history
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">history = function (settings) {
+  var file, json, shell, stream, _ref, _ref1;
+  if (!settings.shell) {
+    throw new Error('No shell provided');
+  }
+  shell = settings.shell;
+  if (!settings.shell.isShell) {
+    return;
+  }
+  if ((_ref = settings.dir) == null) {
+    settings.dir = "" + process.env['HOME'] + "/.node_shell";
+  }
+  if ((_ref1 = settings.name) == null) {
+    settings.name = hash(process.argv[1]);
+  }
+  file = "" + settings.dir + "/" + settings.file;
+  if (!fs.existsSync(settings.dir)) {
+    fs.mkdirSync(settings.dir, 0x1c0);
+  }
+  if (fs.existsSync(file)) {
+    try {
+      json = fs.readFileSync(file, 'utf8') || '[]';
+      settings.shell["interface"]().history = JSON.parse(json);
+    } catch (e) {
+      settings.shell.styles.red('Corrupted history file').ln();
+    }
+  }
+  stream = fs.createWriteStream(file, {
+    flag: 'w'
+  });
+  Interface.prototype._addHistory = (function(parent) {
+    return function() {
+      var buffer;
+      if (this.history.length) {
+        buffer = new Buffer(JSON.stringify(this.history));
+        fs.write(stream.fd, buffer, 0, buffer.length, 0);
+      }
+      return parent.apply(this, arguments);
+    };
+  })(Interface.prototype._addHistory);
+  return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var app = new shell( { chdir: __dirname } )
+// Middleware registration
+app.configure(function() {
+app.use(function(req, res, next){
+  app.client = require('redis').createClient()
+  next()
+});
+app.use(shell.<span class="apidocCodeKeywordSpan">history</span>({
+  shell: app
+}));
+app.use(shell.completer({
+  shell: app
+}));
+app.use(shell.redis({
+  config: 'redis.conf',
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.http" id="apidoc.element.shell.http">
+        function <span class="apidocSignatureSpan">shell.</span>http
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">http = function () {
+  var cmd, http, route, settings;
+  settings = {};
+  cmd = function() {
+    var search, searchs, _i, _len;
+    searchs = settings.path ? [settings.path] : ['app', 'server', 'lib/app', 'lib/server'];
+    for (_i = 0, _len = searchs.length; _i &lt; _len; _i++) {
+      search = searchs[_i];
+      search = path.resolve(settings.workspace, search);
+      if (existsSync("" + search)) {
+        if (search.substr(-4) === '.coffee') {
+          return "coffee " + search;
+        } else {
+          return "node " + search;
+        }
+      }
+      if (existsSync("" + search + ".js")) {
+        return "node " + search + ".js";
+      } else if (existsSync("" + search + ".coffee")) {
+        return "coffee " + search + ".coffee";
+      }
+    }
+    throw new Error('Failed to discover a "server.js" or "app.js" file');
+  };
+  http = null;
+  route = function(req, res, next) {
+    var app, _ref, _ref1, _ref2;
+    app = req.shell;
+    if (app.tmp.http) {
+      return next();
+    }
+    app.tmp.http = true;
+    if ((_ref = settings.workspace) == null) {
+      settings.workspace = app.set('workspace');
+    }
+    if (!settings.workspace) {
+      throw new Error('No workspace provided');
+    }
+    if ((_ref1 = settings.message_start) == null) {
+      settings.message_start = 'HTTP server successfully started';
+    }
+    if ((_ref2 = settings.message_stop) == null) {
+      settings.message_stop = 'HTTP server successfully stopped';
+    }
+    if (!settings.cmd) {
+      settings.cmd = cmd();
+    }
+    app.cmd('http start', 'Start HTTP server', function(req, res, next) {
+      return http = start_stop.start(settings, function(err, pid) {
+        if (err) {
+          return next(err);
+        }
+        if (!pid) {
+          return res.cyan('HTTP server already started').ln() &amp;&amp; res.prompt();
+        }
+        res.cyan(settings.message_start).ln();
+        return res.prompt();
+      });
+    });
+    app.cmd('http stop', 'Stop HTTP server', function(req, res, next) {
+      return start_stop.stop(settings, function(err, success) {
+        if (success) {
+          res.cyan(settings.message_stop).ln();
+        } else {
+          res.magenta('HTTP server was not started').ln();
+        }
+        return res.prompt();
+      });
+    });
+    return next();
+  };
+  if (arguments.length === 1) {
+    settings = arguments[0];
+    return route;
+  } else {
+    return route.apply(null, arguments);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var app = new shell();
+app.configure(function() {
+  app.use(shell.router({
+    shell: app
+  }));
+  app.use(shell.<span class="apidocCodeKeywordSpan">http</span>({
+    shell: app
+  }));
+  app.use(shell.help({
+    shell: app,
+    introduction: true
+  }));
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index" id="apidoc.element.shell.index">
+        function <span class="apidocSignatureSpan">shell.</span>index
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Shell(settings) {
+  var _base, _base1, _base2, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6,
+    _this = this;
+  if (settings == null) {
+    settings = {};
+  }
+  if (!(this instanceof Shell)) {
+    return new Shell(settings);
+  }
+  EventEmitter.call(this);
+  this.tmp = {};
+  this.settings = settings;
+  if ((_ref = (_base = this.settings).prompt) == null) {
+    _base.prompt = '&gt;&gt; ';
+  }
+  if ((_ref1 = (_base1 = this.settings).stdin) == null) {
+    _base1.stdin = process.stdin;
+  }
+  if ((_ref2 = (_base2 = this.settings).stdout) == null) {
+    _base2.stdout = process.stdout;
+  }
+  this.set('env', (_ref3 = (_ref4 = this.settings.env) != null ? _ref4 : process.env.NODE_ENV) != null ? _ref3 : 'development');
+  this.set('command', typeof settings.command !== 'undefined' ? settings.command : process.argv.slice(2).join(' '));
+  this.stack = [];
+  this.styles = styles({
+    stdout: this.settings.stdout
+  });
+  process.on('beforeExit', function() {
+    return _this.emit('exit');
+  });
+  process.on('uncaughtException', function(e) {
+    _this.emit('exit', [e]);
+    _this.styles.red('Internal error, closing...').ln();
+    console.error(e.message);
+    console.error(e.stack);
+    return process.exit();
+  });
+  this.isShell = (_ref5 = this.settings.isShell) != null ? _ref5 : process.argv.length === 2;
+  if (this.isShell) {
+    this["interface"]();
+  }
+  if ((_ref6 = settings.workspace) == null) {
+    settings.workspace = utils.workspace();
+  }
+  if (settings.chdir === true) {
+    process.chdir(settings.workspace);
+  }
+  if (typeof settings.chdir === 'string') {
+    process.chdir(settings.chdir);
+  }
+  process.nextTick(function() {
+    var command, noPrompt;
+    if (_this.isShell) {
+      command = _this.set('command');
+      noPrompt = _this.set('noPrompt');
+      if (command) {
+        return _this.run(command);
+      } else if (!noPrompt) {
+        return _this.prompt();
+      }
+    } else {
+      command = _this.set('command');
+      if (command) {
+        return _this.run(command);
+      }
+    }
+  });
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.init" id="apidoc.element.shell.init">
+        function <span class="apidocSignatureSpan">shell.</span>init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function () {
+  this.domain = null;
+  if (EventEmitter.usingDomains) {
+    // if there is an active domain, then attach to it.
+    domain = domain || require('domain');
+    if (domain.active &amp;&amp; !(this instanceof domain.Domain)) {
+      this.domain = domain.active;
+    }
+  }
+
+  if (!this._events || this._events === Object.getPrototypeOf(this)._events) {
+    this._events = new EventHandlers();
+    this._eventsCount = 0;
+  }
+
+  this._maxListeners = this._maxListeners || undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.listenerCount" id="apidoc.element.shell.listenerCount">
+        function <span class="apidocSignatureSpan">shell.</span>listenerCount
+        <span class="apidocSignatureSpan">(emitter, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listenerCount = function (emitter, type) {
+  if (typeof emitter.listenerCount === 'function') {
+    return emitter.listenerCount(type);
+  } else {
+    return listenerCount.call(emitter, type);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.redis" id="apidoc.element.shell.redis">
+        function <span class="apidocSignatureSpan">shell.</span>redis
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">redis = function () {
+  var redis, route, settings;
+  settings = {};
+  redis = null;
+  route = function(req, res, next) {
+    var app, _ref, _ref1;
+    app = req.shell;
+    if (app.tmp.redis) {
+      return next();
+    }
+    app.tmp.redis = true;
+    if ((_ref = settings.workspace) == null) {
+      settings.workspace = app.set('workspace');
+    }
+    if ((_ref1 = settings.config) == null) {
+      settings.config = '';
+    }
+    settings.cmd = "redis-server " + settings.config;
+    app.cmd('redis start', 'Start Redis', function(req, res, next) {
+      return redis = start_stop.start(settings, function(err, pid) {
+        if (err) {
+          return next(err);
+        }
+        if (!pid) {
+          res.cyan('Redis already started').ln();
+          return res.prompt();
+        }
+        res.cyan('Redis started').ln();
+        return res.prompt();
+      });
+    });
+    app.cmd('redis stop', 'Stop Redis', function(req, res, next) {
+      return start_stop.stop(settings, function(err, success) {
+        if (success) {
+          res.cyan('Redis successfully stoped').ln();
+        } else {
+          res.magenta('Redis was not started').ln();
+        }
+        return res.prompt();
+      });
+    });
+    return next();
+  };
+  if (arguments.length === 1) {
+    settings = arguments[0];
+    return route;
+  } else {
+    return route.apply(null, arguments);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+app.use(shell.history({
+  shell: app
+}));
+app.use(shell.completer({
+  shell: app
+}));
+app.use(shell.<span class="apidocCodeKeywordSpan">redis</span>({
+  config: 'redis.conf',
+  pidfile: 'redis.pid'
+}));
+app.use(shell.router({
+  shell: app
+}));
+app.use(shell.help({
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.router" id="apidoc.element.shell.router">
+        function <span class="apidocSignatureSpan">shell.</span>router
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">router = function (settings) {
+  var params, routes, shell, _ref;
+  if (!settings.shell) {
+    throw new Error('No shell provided');
+  }
+  shell = settings.shell;
+  if ((_ref = settings.sensitive) == null) {
+    settings.sensitive = true;
+  }
+  routes = shell.routes = [];
+  params = {};
+  shell.param = function(name, fn) {
+    if (Array.isArray(name)) {
+      name.forEach(function(name) {
+        return this.param(name, fn);
+      }, this);
+    } else {
+      if (':' === name[0]) {
+        name = name.substr(1);
+      }
+      params[name] = fn;
+    }
+    return this;
+  };
+  shell.cmd = function(command, description, middleware1, middleware2, fn) {
+    var args, keys, route;
+    args = Array.prototype.slice.call(arguments);
+    route = {};
+    route.command = args.shift();
+    if (typeof args[0] === 'string') {
+      route.description = args.shift();
+    }
+    route.middlewares = utils.flatten(args);
+    keys = [];
+    route.regexp = route.command instanceof RegExp ? route.command : normalize(route.command, keys, settings.sensitive);
+    route.keys = keys;
+    routes.push(route);
+    return this;
+  };
+  shell.cmd('quit', 'Exit this shell', shell.quit.bind(shell));
+  return function(req, res, next) {
+    var i, pass, route, self;
+    route = null;
+    self = this;
+    i = 0;
+    pass = function(i) {
+      var keys, param;
+      route = match(req, routes, i);
+      if (!route) {
+        return next();
+      }
+      i = 0;
+      keys = route.keys;
+      req.params = route.params;
+      param = function(err) {
+        var fn, key, nextMiddleware, val;
+        try {
+          key = keys[i++];
+          val = req.params[key];
+          fn = params[key];
+          if ('route' === err) {
+            return pass(req._route_index + 1);
+          } else if (err) {
+            return next(err);
+          } else if (fn) {
+            if (1 === fn.length) {
+              req.params[key] = fn(val);
+              return param();
+            } else {
+              return fn(req, res, param, val);
+            }
+          } else if (!key) {
+            i = 0;
+            nextMiddleware = function(err) {
+              fn = route.middlewares[i++];
+              if ('route' === err) {
+                return pass(req._route_index + 1);
+              } else if (err) {
+                return next(err);
+              } else if (fn) {
+                return fn(req, res, nextMiddleware);
+              } else {
+                return pass(req._route_index + 1);
+              }
+            };
+            return nextMiddleware();
+          } else {
+            return param();
+          }
+        } catch (err) {
+          return next(err);
+        }
+      };
+      return param();
+    };
+    return pass();
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  app.use(shell.completer({
+    shell: app
+  }));
+  app.use(shell.redis({
+    config: 'redis.conf',
+    pidfile: 'redis.pid'
+  }));
+  app.use(shell.<span class="apidocCodeKeywordSpan">router</span>({
+    shell: app
+  }));
+  app.use(shell.help({
+    shell: app,
+    introduction: true
+  }));
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles" id="apidoc.element.shell.styles">
+        function <span class="apidocSignatureSpan">shell.</span>styles
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">styles = function (settings) {
+  var _ref;
+  if (settings == null) {
+    settings = {};
+  }
+  if (!(this instanceof Styles)) {
+    return new Styles(settings);
+  }
+  this.settings = settings;
+  this.settings.stdout = (_ref = settings.stdout) != null ? _ref : process.stdout;
+  this.current = {
+    weight: 'regular'
+  };
+  this.colors = colors;
+  this.bgcolors = bgcolors;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.stylus" id="apidoc.element.shell.stylus">
+        function <span class="apidocSignatureSpan">shell.</span>stylus
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stylus = function (settings) {
+  var cmd, shell, _ref;
+  if (settings == null) {
+    settings = {};
+  }
+  if (!settings.shell) {
+    throw new Error('No shell provided');
+  }
+  shell = settings.shell;
+  if ((_ref = settings.workspace) == null) {
+    settings.workspace = shell.set('workspace');
+  }
+  if (!settings.workspace) {
+    throw new Error('No workspace provided');
+  }
+  cmd = function() {
+    var args;
+    args = [];
+    args.push('-w');
+    if (settings.use) {
+      args.push('-u');
+      args.push(enrichFiles(settings.use));
+    }
+    if (settings.output) {
+      args.push('-o');
+      args.push(enrichFiles(settings.output));
+    }
+    if (!settings.input) {
+      settings.input = settings.workspace;
+    }
+    if (settings.input) {
+      args.push(enrichFiles(settings.input));
+    }
+    return cmd = 'stylus ' + args.join(' ');
+  };
+  settings.cmd = cmd();
+  shell.cmd('stylus start', 'Start CoffeeScript', function(req, res, next) {
+    return start_stop.start(settings, function(err, pid) {
+      var message;
+      if (err) {
+        return next(err);
+      }
+      if (!pid) {
+        return res.cyan('Already Started').ln();
+      }
+      message = "Stylus started";
+      res.cyan(message).ln();
+      return res.prompt();
+    });
+  });
+  return shell.cmd('stylus stop', 'Stop Stylus', function(req, res, next) {
+    return start_stop.stop(settings, function(err, success) {
+      if (success) {
+        res.cyan('Stylus successfully stoped').ln();
+      } else {
+        res.magenta('Stylus was not started').ln();
+      }
+      return res.prompt();
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.test" id="apidoc.element.shell.test">
+        function <span class="apidocSignatureSpan">shell.</span>test
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">test = function (settings) {
+  var shell, _ref, _ref1;
+  if (!settings.shell) {
+    throw new Error('No shell provided');
+  }
+  shell = settings.shell;
+  if ((_ref = settings.workspace) == null) {
+    settings.workspace = shell.set('workspace');
+  }
+  if (!settings.workspace) {
+    throw new Error('No workspace provided');
+  }
+  if ((_ref1 = settings.glob) == null) {
+    settings.glob = 'test/*.js';
+  }
+  shell.cmd('test', 'Run all test', function(req, res, next) {
+    var p, paths, run, _i, _len;
+    run = function(cmd) {
+      var args, expresso;
+      args = [];
+      args.push(cmd);
+      if (settings.coverage) {
+        args.push('--cov');
+      }
+      if (settings.serial) {
+        args.push('--serial');
+      }
+      if (settings.glob) {
+        args.push(settings.glob);
+      }
+      expresso = exec('cd ' + settings.workspace + ' &amp;&amp; ' + args.join(' '));
+      expresso.stdout.on('data', function(data) {
+        return res.cyan(data);
+      });
+      expresso.stderr.on('data', function(data) {
+        return res.magenta(data);
+      });
+      return expresso.on('exit', function(code) {
+        return res.prompt();
+      });
+    };
+    paths = [].concat(module.paths, require.paths);
+    for (_i = 0, _len = paths.length; _i &lt; _len; _i++) {
+      p = paths[_i];
+      if (existsSync(p + '/expresso/bin/expresso')) {
+        return run(p);
+      }
+    }
+    res.magenta('Expresso not found').ln();
+    return res.prompt();
+  });
+  return shell.cmd('test :pattern', 'Run specific tests', function(req, res, next) {});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.shell.NullStream" id="apidoc.module.shell.NullStream">module shell.NullStream</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.NullStream.NullStream" id="apidoc.element.shell.NullStream.NullStream">
+        function <span class="apidocSignatureSpan">shell.</span>NullStream
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NullStream() {
+  return NullStream.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.NullStream.EventEmitter" id="apidoc.element.shell.NullStream.EventEmitter">
+        function <span class="apidocSignatureSpan">shell.NullStream.</span>EventEmitter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.NullStream.init" id="apidoc.element.shell.NullStream.init">
+        function <span class="apidocSignatureSpan">shell.NullStream.</span>init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function () {
+  this.domain = null;
+  if (EventEmitter.usingDomains) {
+    // if there is an active domain, then attach to it.
+    domain = domain || require('domain');
+    if (domain.active &amp;&amp; !(this instanceof domain.Domain)) {
+      this.domain = domain.active;
+    }
+  }
+
+  if (!this._events || this._events === Object.getPrototypeOf(this)._events) {
+    this._events = new EventHandlers();
+    this._eventsCount = 0;
+  }
+
+  this._maxListeners = this._maxListeners || undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.NullStream.listenerCount" id="apidoc.element.shell.NullStream.listenerCount">
+        function <span class="apidocSignatureSpan">shell.NullStream.</span>listenerCount
+        <span class="apidocSignatureSpan">(emitter, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listenerCount = function (emitter, type) {
+  if (typeof emitter.listenerCount === 'function') {
+    return emitter.listenerCount(type);
+  } else {
+    return listenerCount.call(emitter, type);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.shell.NullStream.prototype" id="apidoc.module.shell.NullStream.prototype">module shell.NullStream.prototype</a></h1>
+
+
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.NullStream.prototype.constructor" id="apidoc.element.shell.NullStream.prototype.constructor">
+        function <span class="apidocSignatureSpan">shell.NullStream.prototype.</span>constructor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NullStream() {
+  return NullStream.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.NullStream.prototype.destroy" id="apidoc.element.shell.NullStream.prototype.destroy">
+        function <span class="apidocSignatureSpan">shell.NullStream.prototype.</span>destroy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroy = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.NullStream.prototype.destroySoon" id="apidoc.element.shell.NullStream.prototype.destroySoon">
+        function <span class="apidocSignatureSpan">shell.NullStream.prototype.</span>destroySoon
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroySoon = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.NullStream.prototype.end" id="apidoc.element.shell.NullStream.prototype.end">
+        function <span class="apidocSignatureSpan">shell.NullStream.prototype.</span>end
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">end = function () {
+  return this.emit('close');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.NullStream.prototype.pause" id="apidoc.element.shell.NullStream.prototype.pause">
+        function <span class="apidocSignatureSpan">shell.NullStream.prototype.</span>pause
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pause = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.NullStream.prototype.pipe" id="apidoc.element.shell.NullStream.prototype.pipe">
+        function <span class="apidocSignatureSpan">shell.NullStream.prototype.</span>pipe
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pipe = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.NullStream.prototype.resume" id="apidoc.element.shell.NullStream.prototype.resume">
+        function <span class="apidocSignatureSpan">shell.NullStream.prototype.</span>resume
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resume = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.NullStream.prototype.write" id="apidoc.element.shell.NullStream.prototype.write">
+        function <span class="apidocSignatureSpan">shell.NullStream.prototype.</span>write
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (data) {
+  return this.emit('data', data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    flag: 'w'
+  });
+  Interface.prototype._addHistory = (function(parent) {
+    return function() {
+      var buffer;
+      if (this.history.length) {
+        buffer = new Buffer(JSON.stringify(this.history));
+        fs.<span class="apidocCodeKeywordSpan">write</span>(stream.fd, buffer, 0, buffer.length, 0);
+      }
+      return parent.apply(this, arguments);
+    };
+  })(Interface.prototype._addHistory);
+  return null;
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.shell.Request" id="apidoc.module.shell.Request">module shell.Request</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.shell.Request.Request" id="apidoc.element.shell.Request.Request">
+        function <span class="apidocSignatureSpan">shell.</span>Request
+        <span class="apidocSignatureSpan">(shell, command)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Request(shell, command) {
+  this.shell = shell;
+  this.command = command;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.shell.Request.prototype" id="apidoc.module.shell.Request.prototype">module shell.Request.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.shell.Request.prototype.confirm" id="apidoc.element.shell.Request.prototype.confirm">
+        function <span class="apidocSignatureSpan">shell.Request.prototype.</span>confirm
+        <span class="apidocSignatureSpan">(msg, defaultTrue, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">confirm = function (msg, defaultTrue, callback) {
+  var args, keyFalse, keyTrue, key_false, key_true, question, _base, _base1, _ref, _ref1,
+    _this = this;
+  args = arguments;
+  if (!callback) {
+    callback = defaultTrue;
+    defaultTrue = true;
+  }
+  if ((_ref = (_base = this.shell.settings).key_true) == null) {
+    _base.key_true = 'y';
+  }
+  if ((_ref1 = (_base1 = this.shell.settings).key_false) == null) {
+    _base1.key_false = 'n';
+  }
+  key_true = this.shell.settings.key_true.toLowerCase();
+  key_false = this.shell.settings.key_false.toLowerCase();
+  keyTrue = defaultTrue ? key_true.toUpperCase() : key_true;
+  keyFalse = defaultTrue ? key_false : key_false.toUpperCase();
+  msg += ' ';
+  msg += "[" + keyTrue + keyFalse + "] ";
+  question = this.shell.styles.raw(msg, {
+    color: 'green'
+  });
+  return this.shell["interface"]().question(question, function(answer) {
+    var accepted, valid;
+    accepted = ['', key_true, key_false];
+    if (answer.substr(-1, 1) === '\n') {
+      answer = answer.substr(0, answer.length - 1);
+    }
+    answer = answer.toLowerCase();
+    valid = accepted.indexOf(answer) !== -1;
+    if (!valid) {
+      return _this.confirm.apply(_this, args);
+    }
+    return callback(answer === key_true || (defaultTrue &amp;&amp; answer === ''));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var app = new shell();
+app.configure(function() {
+  app.use(shell.router({
+    shell: app
+  }));
+});
+app.cmd('install', [
+  shell.routes.<span class="apidocCodeKeywordSpan">confirm</span>('Do you confirm?'),
+  my_app.routes.download,
+  my_app.routes.configure
+]);
+```
+*/
+
+module.exports = function(message) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.Request.prototype.question" id="apidoc.element.shell.Request.prototype.question">
+        function <span class="apidocSignatureSpan">shell.Request.prototype.</span>question
+        <span class="apidocSignatureSpan">(questions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">question = function (questions, callback) {
+  var answers, isObject, multiple, q, v,
+    _this = this;
+  isObject = function(v) {
+    return typeof v === 'object' &amp;&amp; (v != null) &amp;&amp; !Array.isArray(v);
+  };
+  multiple = true;
+  answers = {};
+  if (isObject(questions)) {
+    questions = (function() {
+      var _results;
+      _results = [];
+      for (q in questions) {
+        v = questions[q];
+        if (v == null) {
+          v = {};
+        }
+        if (!isObject(v)) {
+          v = {
+            value: v
+          };
+        }
+        v.name = q;
+        _results.push(v);
+      }
+      return _results;
+    })();
+  } else if (typeof questions === 'string') {
+    multiple = false;
+    questions = [
+      {
+        name: questions,
+        value: ''
+      }
+    ];
+  }
+  return each(questions).on('item', function(question, next) {
+    q = "" + question.name + " ";
+    if (question.value) {
+      q += "[" + question.value + "] ";
+    }
+    return _this.shell["interface"]().question(q, function(answer) {
+      if (answer.substr(-1, 1) === '\n') {
+        answer = answer.substr(0, answer.length - 1);
+      }
+      answers[question.name] = answer === '' ? question.value : answer;
+      return next();
+    });
+  }).on('end', function() {
+    if (!multiple) {
+      answers = answers[questions[0].name];
+    }
+    return callback(answers);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  ];
+}
+return each(questions).on('item', function(question, next) {
+  q = "" + question.name + " ";
+  if (question.value) {
+    q += "[" + question.value + "] ";
+  }
+  return _this.shell["interface"]().<span class="apidocCodeKeywordSpan">question</span>(q, function(answer) {
+    if (answer.substr(-1, 1) === '\n') {
+      answer = answer.substr(0, answer.length - 1);
+    }
+    answers[question.name] = answer === '' ? question.value : answer;
+    return next();
+  });
+}).on('end', function() {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.shell.Response" id="apidoc.module.shell.Response">module shell.Response</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.shell.Response.Response" id="apidoc.element.shell.Response.Response">
+        function <span class="apidocSignatureSpan">shell.</span>Response
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Response(settings) {
+  this.shell = settings.shell;
+  Response.__super__.constructor.call(this, settings);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.Response.unstyle" id="apidoc.element.shell.Response.unstyle">
+        function <span class="apidocSignatureSpan">shell.Response.</span>unstyle
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unstyle = function (text) {
+  return text.replace(/\x1b.*?m/g, '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.shell.Response.prototype" id="apidoc.module.shell.Response.prototype">module shell.Response.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.shell.Response.prototype.constructor" id="apidoc.element.shell.Response.prototype.constructor">
+        function <span class="apidocSignatureSpan">shell.Response.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Response(settings) {
+  this.shell = settings.shell;
+  Response.__super__.constructor.call(this, settings);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.Response.prototype.pad" id="apidoc.element.shell.Response.prototype.pad">
+        function <span class="apidocSignatureSpan">shell.Response.prototype.</span>pad
+        <span class="apidocSignatureSpan">(text, length, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pad = function (text, length, options) {
+  var escapecolor, invert, pad, padlength, ref;
+  if (options == null) {
+    options = {};
+  }
+  invert = typeof text === 'number';
+  if (invert) {
+    ref = [text, length], length = ref[0], text = ref[1];
+  }
+  if (typeof options === 'string') {
+    options = {
+      char: options
+    };
+  }
+  if (options.char == null) {
+    options.char = ' ';
+  }
+  if (options.strip == null) {
+    options.strip = false;
+  }
+  text = text.toString();
+  pad = '';
+  if (options.colors) {
+    escapecolor = /\x1B\[(?:[0-9]{1,2}(?:;[0-9]{1,2})?)?[m|K]/g;
+    length += text.length - text.replace(escapecolor, '').length;
+  }
+  padlength = length - text.length;
+  if (padlength &lt; 0) {
+    if (options.strip) {
+      if (invert) {
+        return text.substr(length * -1);
+      } else {
+        return text.substr(0, length);
+      }
+    }
+    return text;
+  }
+  pad += options.char.repeat(padlength);
+  if (invert) {
+    return pad + text;
+  } else {
+    return text + pad;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.Response.prototype.prompt" id="apidoc.element.shell.Response.prototype.prompt">
+        function <span class="apidocSignatureSpan">shell.Response.prototype.</span>prompt
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prompt = function () {
+  return this.shell.prompt();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }));
+});
+// Command registration
+app.cmd('redis keys :pattern', 'Find keys', function(req, res, next){
+  app.client.keys(req.params.pattern, function(err, keys){
+    if(err){ return res.styles.red(err.message), next(); }
+    res.cyan(keys.join('\n')||'no keys');
+    res.<span class="apidocCodeKeywordSpan">prompt</span>();
+  });
+});
+// Event notification
+app.on('quit', function(){
+  app.client.quit();
+});
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.shell.index" id="apidoc.module.shell.index">module shell.index</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.index" id="apidoc.element.shell.index.index">
+        function <span class="apidocSignatureSpan">shell.</span>index
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Shell(settings) {
+  var _base, _base1, _base2, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6,
+    _this = this;
+  if (settings == null) {
+    settings = {};
+  }
+  if (!(this instanceof Shell)) {
+    return new Shell(settings);
+  }
+  EventEmitter.call(this);
+  this.tmp = {};
+  this.settings = settings;
+  if ((_ref = (_base = this.settings).prompt) == null) {
+    _base.prompt = '&gt;&gt; ';
+  }
+  if ((_ref1 = (_base1 = this.settings).stdin) == null) {
+    _base1.stdin = process.stdin;
+  }
+  if ((_ref2 = (_base2 = this.settings).stdout) == null) {
+    _base2.stdout = process.stdout;
+  }
+  this.set('env', (_ref3 = (_ref4 = this.settings.env) != null ? _ref4 : process.env.NODE_ENV) != null ? _ref3 : 'development');
+  this.set('command', typeof settings.command !== 'undefined' ? settings.command : process.argv.slice(2).join(' '));
+  this.stack = [];
+  this.styles = styles({
+    stdout: this.settings.stdout
+  });
+  process.on('beforeExit', function() {
+    return _this.emit('exit');
+  });
+  process.on('uncaughtException', function(e) {
+    _this.emit('exit', [e]);
+    _this.styles.red('Internal error, closing...').ln();
+    console.error(e.message);
+    console.error(e.stack);
+    return process.exit();
+  });
+  this.isShell = (_ref5 = this.settings.isShell) != null ? _ref5 : process.argv.length === 2;
+  if (this.isShell) {
+    this["interface"]();
+  }
+  if ((_ref6 = settings.workspace) == null) {
+    settings.workspace = utils.workspace();
+  }
+  if (settings.chdir === true) {
+    process.chdir(settings.workspace);
+  }
+  if (typeof settings.chdir === 'string') {
+    process.chdir(settings.chdir);
+  }
+  process.nextTick(function() {
+    var command, noPrompt;
+    if (_this.isShell) {
+      command = _this.set('command');
+      noPrompt = _this.set('noPrompt');
+      if (command) {
+        return _this.run(command);
+      } else if (!noPrompt) {
+        return _this.prompt();
+      }
+    } else {
+      command = _this.set('command');
+      if (command) {
+        return _this.run(command);
+      }
+    }
+  });
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.EventEmitter" id="apidoc.element.shell.index.EventEmitter">
+        function <span class="apidocSignatureSpan">shell.index.</span>EventEmitter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.NullStream" id="apidoc.element.shell.index.NullStream">
+        function <span class="apidocSignatureSpan">shell.index.</span>NullStream
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NullStream() {
+  return NullStream.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.Shell" id="apidoc.element.shell.index.Shell">
+        function <span class="apidocSignatureSpan">shell.index.</span>Shell
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Shell = function (settings){
+  console.warn('Deprecated, use `shell()` instead of `shell.Shell()`');
+  return new Shell( settings );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Shell.routes = {
+  confirm: require('./lib/routes/confirm'),
+  prompt: require('./lib/routes/prompt'),
+  shellOnly: require('./lib/routes/shellOnly')
+};
+
+Shell.Shell = function(settings){
+  console.warn('Deprecated, use `shell()` instead of `shell.<span class="apidocCodeKeywordSpan">Shell</span>()`');
+  return new Shell( settings );
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.cloud9" id="apidoc.element.shell.index.cloud9">
+        function <span class="apidocSignatureSpan">shell.index.</span>cloud9
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cloud9 = function (settings) {
+  var cmd;
+  if (settings == null) {
+    settings = {};
+  }
+  cmd = function() {
+    var args;
+    args = [];
+    args.push('-w');
+    args.push(settings.workspace);
+    if (settings.config) {
+      args.push('-c');
+      args.push(settings.config);
+    }
+    if (settings.group) {
+      args.push('-g');
+      args.push(settings.group);
+    }
+    if (settings.user) {
+      args.push('-u');
+      args.push(settings.user);
+    }
+    if (settings.action) {
+      args.push('-a');
+      args.push(settings.action);
+    }
+    if (settings.ip) {
+      args.push('-l');
+      args.push(settings.ip);
+    }
+    if (settings.port) {
+      args.push('-p');
+      args.push(settings.port);
+    }
+    return "cloud9 " + (args.join(' '));
+  };
+  return function(req, res, next) {
+    var app, _ref;
+    app = req.shell;
+    if (app.tmp.cloud9) {
+      return next();
+    }
+    app.tmp.cloud9 = true;
+    if ((_ref = settings.workspace) == null) {
+      settings.workspace = app.set('workspace');
+    }
+    if (!settings.workspace) {
+      return next(new Error('No workspace provided'));
+    }
+    settings.cmd = cmd();
+    app.cmd('cloud9 start', 'Start Cloud9', function(req, res, next) {
+      return start_stop.start(settings, function(err, pid) {
+        var ip, message, port;
+        if (err) {
+          return next(err);
+        }
+        if (!pid) {
+          res.cyan('Cloud9 already started').ln();
+          return res.prompt();
+        }
+        ip = settings.ip || '127.0.0.1';
+        port = settings.port || 3000;
+        message = "Cloud9 started http://" + ip + ":" + port;
+        res.cyan(message).ln();
+        return res.prompt();
+      });
+    });
+    app.cmd('cloud9 stop', 'Stop Cloud9', function(req, res, next) {
+      return start_stop.stop(settings, function(err, success) {
+        if (success) {
+          res.cyan('Cloud9 successfully stoped').ln();
+        } else {
+          res.magenta('Cloud9 was not started').ln();
+        }
+        return res.prompt();
+      });
+    });
+    return next();
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var app = new shell();
+app.configure(function() {
+app.use(shell.router({
+  shell: app
+}));
+app.use(shell.<span class="apidocCodeKeywordSpan">cloud9</span>({
+  shell: app,
+  ip: '0.0.0.0'
+}));
+app.use(shell.help({
+  shell: app,
+  introduction: true
+}));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.coffee" id="apidoc.element.shell.index.coffee">
+        function <span class="apidocSignatureSpan">shell.index.</span>coffee
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">coffee = function (settings) {
+  var cmd, shell, _ref;
+  if (settings == null) {
+    settings = {};
+  }
+  if (!settings.shell) {
+    throw new Error('No shell provided');
+  }
+  shell = settings.shell;
+  if ((_ref = settings.workspace) == null) {
+    settings.workspace = shell.set('workspace');
+  }
+  if (!settings.workspace) {
+    throw new Error('No workspace provided');
+  }
+  cmd = function() {
+    var args;
+    args = [];
+    if (settings.join) {
+      args.push('-j');
+      args.push(enrichFiles(settings.join));
+    }
+    args.push('-w');
+    if (settings.lint) {
+      args.push('-l');
+    }
+    if (settings.require) {
+      args.push('-r');
+      args.push(settings.require);
+    }
+    args.push('-b');
+    if (settings.output) {
+      args.push('-o');
+      args.push(enrichFiles(settings.output));
+    }
+    if (!settings.compile) {
+      settings.compile = settings.workspace;
+    }
+    if (settings.compile) {
+      args.push('-c');
+      args.push(enrichFiles(settings.compile));
+    }
+    return cmd = 'coffee ' + args.join(' ');
+  };
+  settings.cmd = cmd();
+  shell.cmd('coffee start', 'Start CoffeeScript', function(req, res, next) {
+    return start_stop.start(settings, function(err, pid) {
+      var message;
+      if (err) {
+        return next(err);
+      }
+      if (!pid) {
+        return res.cyan('Already Started').ln();
+      }
+      message = "CoffeeScript started";
+      res.cyan(message).ln();
+      return res.prompt();
+    });
+  });
+  return shell.cmd('coffee stop', 'Stop CoffeeScript', function(req, res, next) {
+    return start_stop.stop(settings, function(err, success) {
+      if (success) {
+        res.cyan('CoffeeScript successfully stoped').ln();
+      } else {
+        res.magenta('CoffeeScript was not started').ln();
+      }
+      return res.prompt();
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var app = new shell();
+app.configure(function() {
+  app.use(shell.router({
+    shell: app
+  }));
+  app.use(shell.<span class="apidocCodeKeywordSpan">coffee</span>({
+    shell: app
+  }));
+  app.use(shell.help({
+    shell: app,
+    introduction: true
+  }));
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.completer" id="apidoc.element.shell.index.completer">
+        function <span class="apidocSignatureSpan">shell.index.</span>completer
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">completer = function (settings) {
+  var shell;
+  if (!settings.shell) {
+    throw new Error('No shell provided');
+  }
+  shell = settings.shell;
+  if (!shell.isShell) {
+    return;
+  }
+  shell["interface"]().completer = function(text, cb) {
+    var command, route, routes, suggestions, _i, _len;
+    suggestions = [];
+    routes = shell.routes;
+    for (_i = 0, _len = routes.length; _i &lt; _len; _i++) {
+      route = routes[_i];
+      command = route.command;
+      if (command.substr(0, text.length) === text) {
+        suggestions.push(command);
+      }
+    }
+    return cb(false, [suggestions, text]);
+  };
+  return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+app.use(function(req, res, next){
+  app.client = require('redis').createClient()
+  next()
+});
+app.use(shell.history({
+  shell: app
+}));
+app.use(shell.<span class="apidocCodeKeywordSpan">completer</span>({
+  shell: app
+}));
+app.use(shell.redis({
+  config: 'redis.conf',
+  pidfile: 'redis.pid'
+}));
+app.use(shell.router({
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.error" id="apidoc.element.shell.index.error">
+        function <span class="apidocSignatureSpan">shell.index.</span>error
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function (settings) {
+  var shell;
+  if (!settings.shell) {
+    throw new Error('No shell provided');
+  }
+  shell = settings.shell;
+  shell.on('error', function() {});
+  return function(err, req, res, next) {
+    var k, v;
+    if (err.message) {
+      res.red(err.message).ln();
+    }
+    if (err.stack) {
+      res.red(err.stack).ln();
+    }
+    for (k in err) {
+      v = err[k];
+      if (k === 'message') {
+        continue;
+      }
+      if (k === 'stack') {
+        continue;
+      }
+      if (typeof v === 'function') {
+        continue;
+      }
+      res.magenta(k).white(': ').red(v).ln();
+    }
+    return res.prompt();
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.help" id="apidoc.element.shell.index.help">
+        function <span class="apidocSignatureSpan">shell.index.</span>help
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">help = function (settings) {
+  var shell, text;
+  if (!settings.shell) {
+    throw new Error('No shell provided');
+  }
+  shell = settings.shell;
+  shell.help = function(req, res, next) {
+    var route, routes, text, _i, _len;
+    res.cyan('Available commands:');
+    res.ln();
+    routes = shell.routes;
+    for (_i = 0, _len = routes.length; _i &lt; _len; _i++) {
+      route = routes[_i];
+      text = pad(route.command, 20);
+      if (route.description) {
+        res.cyan(text).white(route.description).ln();
+      }
+    }
+    return res.prompt();
+  };
+  shell.cmd('help', 'Show this message', shell.help.bind(shell));
+  shell.cmd('', shell.help.bind(shell));
+  if (shell.isShell &amp;&amp; settings.introduction) {
+    text = typeof settings.introduction === 'string' ? settings.introduction : 'Type "help" or press enter for a list of commands
+';
+    return shell.styles.println(text);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+app.use(shell.redis({
+  config: 'redis.conf',
+  pidfile: 'redis.pid'
+}));
+app.use(shell.router({
+  shell: app
+}));
+app.use(shell.<span class="apidocCodeKeywordSpan">help</span>({
+  shell: app,
+  introduction: true
+}));
+});
+// Command registration
+app.cmd('redis keys :pattern', 'Find keys', function(req, res, next){
+app.client.keys(req.params.pattern, function(err, keys){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.history" id="apidoc.element.shell.index.history">
+        function <span class="apidocSignatureSpan">shell.index.</span>history
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">history = function (settings) {
+  var file, json, shell, stream, _ref, _ref1;
+  if (!settings.shell) {
+    throw new Error('No shell provided');
+  }
+  shell = settings.shell;
+  if (!settings.shell.isShell) {
+    return;
+  }
+  if ((_ref = settings.dir) == null) {
+    settings.dir = "" + process.env['HOME'] + "/.node_shell";
+  }
+  if ((_ref1 = settings.name) == null) {
+    settings.name = hash(process.argv[1]);
+  }
+  file = "" + settings.dir + "/" + settings.file;
+  if (!fs.existsSync(settings.dir)) {
+    fs.mkdirSync(settings.dir, 0x1c0);
+  }
+  if (fs.existsSync(file)) {
+    try {
+      json = fs.readFileSync(file, 'utf8') || '[]';
+      settings.shell["interface"]().history = JSON.parse(json);
+    } catch (e) {
+      settings.shell.styles.red('Corrupted history file').ln();
+    }
+  }
+  stream = fs.createWriteStream(file, {
+    flag: 'w'
+  });
+  Interface.prototype._addHistory = (function(parent) {
+    return function() {
+      var buffer;
+      if (this.history.length) {
+        buffer = new Buffer(JSON.stringify(this.history));
+        fs.write(stream.fd, buffer, 0, buffer.length, 0);
+      }
+      return parent.apply(this, arguments);
+    };
+  })(Interface.prototype._addHistory);
+  return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var app = new shell( { chdir: __dirname } )
+// Middleware registration
+app.configure(function() {
+app.use(function(req, res, next){
+  app.client = require('redis').createClient()
+  next()
+});
+app.use(shell.<span class="apidocCodeKeywordSpan">history</span>({
+  shell: app
+}));
+app.use(shell.completer({
+  shell: app
+}));
+app.use(shell.redis({
+  config: 'redis.conf',
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.http" id="apidoc.element.shell.index.http">
+        function <span class="apidocSignatureSpan">shell.index.</span>http
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">http = function () {
+  var cmd, http, route, settings;
+  settings = {};
+  cmd = function() {
+    var search, searchs, _i, _len;
+    searchs = settings.path ? [settings.path] : ['app', 'server', 'lib/app', 'lib/server'];
+    for (_i = 0, _len = searchs.length; _i &lt; _len; _i++) {
+      search = searchs[_i];
+      search = path.resolve(settings.workspace, search);
+      if (existsSync("" + search)) {
+        if (search.substr(-4) === '.coffee') {
+          return "coffee " + search;
+        } else {
+          return "node " + search;
+        }
+      }
+      if (existsSync("" + search + ".js")) {
+        return "node " + search + ".js";
+      } else if (existsSync("" + search + ".coffee")) {
+        return "coffee " + search + ".coffee";
+      }
+    }
+    throw new Error('Failed to discover a "server.js" or "app.js" file');
+  };
+  http = null;
+  route = function(req, res, next) {
+    var app, _ref, _ref1, _ref2;
+    app = req.shell;
+    if (app.tmp.http) {
+      return next();
+    }
+    app.tmp.http = true;
+    if ((_ref = settings.workspace) == null) {
+      settings.workspace = app.set('workspace');
+    }
+    if (!settings.workspace) {
+      throw new Error('No workspace provided');
+    }
+    if ((_ref1 = settings.message_start) == null) {
+      settings.message_start = 'HTTP server successfully started';
+    }
+    if ((_ref2 = settings.message_stop) == null) {
+      settings.message_stop = 'HTTP server successfully stopped';
+    }
+    if (!settings.cmd) {
+      settings.cmd = cmd();
+    }
+    app.cmd('http start', 'Start HTTP server', function(req, res, next) {
+      return http = start_stop.start(settings, function(err, pid) {
+        if (err) {
+          return next(err);
+        }
+        if (!pid) {
+          return res.cyan('HTTP server already started').ln() &amp;&amp; res.prompt();
+        }
+        res.cyan(settings.message_start).ln();
+        return res.prompt();
+      });
+    });
+    app.cmd('http stop', 'Stop HTTP server', function(req, res, next) {
+      return start_stop.stop(settings, function(err, success) {
+        if (success) {
+          res.cyan(settings.message_stop).ln();
+        } else {
+          res.magenta('HTTP server was not started').ln();
+        }
+        return res.prompt();
+      });
+    });
+    return next();
+  };
+  if (arguments.length === 1) {
+    settings = arguments[0];
+    return route;
+  } else {
+    return route.apply(null, arguments);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var app = new shell();
+app.configure(function() {
+  app.use(shell.router({
+    shell: app
+  }));
+  app.use(shell.<span class="apidocCodeKeywordSpan">http</span>({
+    shell: app
+  }));
+  app.use(shell.help({
+    shell: app,
+    introduction: true
+  }));
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.init" id="apidoc.element.shell.index.init">
+        function <span class="apidocSignatureSpan">shell.index.</span>init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function () {
+  this.domain = null;
+  if (EventEmitter.usingDomains) {
+    // if there is an active domain, then attach to it.
+    domain = domain || require('domain');
+    if (domain.active &amp;&amp; !(this instanceof domain.Domain)) {
+      this.domain = domain.active;
+    }
+  }
+
+  if (!this._events || this._events === Object.getPrototypeOf(this)._events) {
+    this._events = new EventHandlers();
+    this._eventsCount = 0;
+  }
+
+  this._maxListeners = this._maxListeners || undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.listenerCount" id="apidoc.element.shell.index.listenerCount">
+        function <span class="apidocSignatureSpan">shell.index.</span>listenerCount
+        <span class="apidocSignatureSpan">(emitter, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listenerCount = function (emitter, type) {
+  if (typeof emitter.listenerCount === 'function') {
+    return emitter.listenerCount(type);
+  } else {
+    return listenerCount.call(emitter, type);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.redis" id="apidoc.element.shell.index.redis">
+        function <span class="apidocSignatureSpan">shell.index.</span>redis
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">redis = function () {
+  var redis, route, settings;
+  settings = {};
+  redis = null;
+  route = function(req, res, next) {
+    var app, _ref, _ref1;
+    app = req.shell;
+    if (app.tmp.redis) {
+      return next();
+    }
+    app.tmp.redis = true;
+    if ((_ref = settings.workspace) == null) {
+      settings.workspace = app.set('workspace');
+    }
+    if ((_ref1 = settings.config) == null) {
+      settings.config = '';
+    }
+    settings.cmd = "redis-server " + settings.config;
+    app.cmd('redis start', 'Start Redis', function(req, res, next) {
+      return redis = start_stop.start(settings, function(err, pid) {
+        if (err) {
+          return next(err);
+        }
+        if (!pid) {
+          res.cyan('Redis already started').ln();
+          return res.prompt();
+        }
+        res.cyan('Redis started').ln();
+        return res.prompt();
+      });
+    });
+    app.cmd('redis stop', 'Stop Redis', function(req, res, next) {
+      return start_stop.stop(settings, function(err, success) {
+        if (success) {
+          res.cyan('Redis successfully stoped').ln();
+        } else {
+          res.magenta('Redis was not started').ln();
+        }
+        return res.prompt();
+      });
+    });
+    return next();
+  };
+  if (arguments.length === 1) {
+    settings = arguments[0];
+    return route;
+  } else {
+    return route.apply(null, arguments);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+app.use(shell.history({
+  shell: app
+}));
+app.use(shell.completer({
+  shell: app
+}));
+app.use(shell.<span class="apidocCodeKeywordSpan">redis</span>({
+  config: 'redis.conf',
+  pidfile: 'redis.pid'
+}));
+app.use(shell.router({
+  shell: app
+}));
+app.use(shell.help({
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.router" id="apidoc.element.shell.index.router">
+        function <span class="apidocSignatureSpan">shell.index.</span>router
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">router = function (settings) {
+  var params, routes, shell, _ref;
+  if (!settings.shell) {
+    throw new Error('No shell provided');
+  }
+  shell = settings.shell;
+  if ((_ref = settings.sensitive) == null) {
+    settings.sensitive = true;
+  }
+  routes = shell.routes = [];
+  params = {};
+  shell.param = function(name, fn) {
+    if (Array.isArray(name)) {
+      name.forEach(function(name) {
+        return this.param(name, fn);
+      }, this);
+    } else {
+      if (':' === name[0]) {
+        name = name.substr(1);
+      }
+      params[name] = fn;
+    }
+    return this;
+  };
+  shell.cmd = function(command, description, middleware1, middleware2, fn) {
+    var args, keys, route;
+    args = Array.prototype.slice.call(arguments);
+    route = {};
+    route.command = args.shift();
+    if (typeof args[0] === 'string') {
+      route.description = args.shift();
+    }
+    route.middlewares = utils.flatten(args);
+    keys = [];
+    route.regexp = route.command instanceof RegExp ? route.command : normalize(route.command, keys, settings.sensitive);
+    route.keys = keys;
+    routes.push(route);
+    return this;
+  };
+  shell.cmd('quit', 'Exit this shell', shell.quit.bind(shell));
+  return function(req, res, next) {
+    var i, pass, route, self;
+    route = null;
+    self = this;
+    i = 0;
+    pass = function(i) {
+      var keys, param;
+      route = match(req, routes, i);
+      if (!route) {
+        return next();
+      }
+      i = 0;
+      keys = route.keys;
+      req.params = route.params;
+      param = function(err) {
+        var fn, key, nextMiddleware, val;
+        try {
+          key = keys[i++];
+          val = req.params[key];
+          fn = params[key];
+          if ('route' === err) {
+            return pass(req._route_index + 1);
+          } else if (err) {
+            return next(err);
+          } else if (fn) {
+            if (1 === fn.length) {
+              req.params[key] = fn(val);
+              return param();
+            } else {
+              return fn(req, res, param, val);
+            }
+          } else if (!key) {
+            i = 0;
+            nextMiddleware = function(err) {
+              fn = route.middlewares[i++];
+              if ('route' === err) {
+                return pass(req._route_index + 1);
+              } else if (err) {
+                return next(err);
+              } else if (fn) {
+                return fn(req, res, nextMiddleware);
+              } else {
+                return pass(req._route_index + 1);
+              }
+            };
+            return nextMiddleware();
+          } else {
+            return param();
+          }
+        } catch (err) {
+          return next(err);
+        }
+      };
+      return param();
+    };
+    return pass();
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  app.use(shell.completer({
+    shell: app
+  }));
+  app.use(shell.redis({
+    config: 'redis.conf',
+    pidfile: 'redis.pid'
+  }));
+  app.use(shell.<span class="apidocCodeKeywordSpan">router</span>({
+    shell: app
+  }));
+  app.use(shell.help({
+    shell: app,
+    introduction: true
+  }));
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.styles" id="apidoc.element.shell.index.styles">
+        function <span class="apidocSignatureSpan">shell.index.</span>styles
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">styles = function (settings) {
+  var _ref;
+  if (settings == null) {
+    settings = {};
+  }
+  if (!(this instanceof Styles)) {
+    return new Styles(settings);
+  }
+  this.settings = settings;
+  this.settings.stdout = (_ref = settings.stdout) != null ? _ref : process.stdout;
+  this.current = {
+    weight: 'regular'
+  };
+  this.colors = colors;
+  this.bgcolors = bgcolors;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.stylus" id="apidoc.element.shell.index.stylus">
+        function <span class="apidocSignatureSpan">shell.index.</span>stylus
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stylus = function (settings) {
+  var cmd, shell, _ref;
+  if (settings == null) {
+    settings = {};
+  }
+  if (!settings.shell) {
+    throw new Error('No shell provided');
+  }
+  shell = settings.shell;
+  if ((_ref = settings.workspace) == null) {
+    settings.workspace = shell.set('workspace');
+  }
+  if (!settings.workspace) {
+    throw new Error('No workspace provided');
+  }
+  cmd = function() {
+    var args;
+    args = [];
+    args.push('-w');
+    if (settings.use) {
+      args.push('-u');
+      args.push(enrichFiles(settings.use));
+    }
+    if (settings.output) {
+      args.push('-o');
+      args.push(enrichFiles(settings.output));
+    }
+    if (!settings.input) {
+      settings.input = settings.workspace;
+    }
+    if (settings.input) {
+      args.push(enrichFiles(settings.input));
+    }
+    return cmd = 'stylus ' + args.join(' ');
+  };
+  settings.cmd = cmd();
+  shell.cmd('stylus start', 'Start CoffeeScript', function(req, res, next) {
+    return start_stop.start(settings, function(err, pid) {
+      var message;
+      if (err) {
+        return next(err);
+      }
+      if (!pid) {
+        return res.cyan('Already Started').ln();
+      }
+      message = "Stylus started";
+      res.cyan(message).ln();
+      return res.prompt();
+    });
+  });
+  return shell.cmd('stylus stop', 'Stop Stylus', function(req, res, next) {
+    return start_stop.stop(settings, function(err, success) {
+      if (success) {
+        res.cyan('Stylus successfully stoped').ln();
+      } else {
+        res.magenta('Stylus was not started').ln();
+      }
+      return res.prompt();
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.test" id="apidoc.element.shell.index.test">
+        function <span class="apidocSignatureSpan">shell.index.</span>test
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">test = function (settings) {
+  var shell, _ref, _ref1;
+  if (!settings.shell) {
+    throw new Error('No shell provided');
+  }
+  shell = settings.shell;
+  if ((_ref = settings.workspace) == null) {
+    settings.workspace = shell.set('workspace');
+  }
+  if (!settings.workspace) {
+    throw new Error('No workspace provided');
+  }
+  if ((_ref1 = settings.glob) == null) {
+    settings.glob = 'test/*.js';
+  }
+  shell.cmd('test', 'Run all test', function(req, res, next) {
+    var p, paths, run, _i, _len;
+    run = function(cmd) {
+      var args, expresso;
+      args = [];
+      args.push(cmd);
+      if (settings.coverage) {
+        args.push('--cov');
+      }
+      if (settings.serial) {
+        args.push('--serial');
+      }
+      if (settings.glob) {
+        args.push(settings.glob);
+      }
+      expresso = exec('cd ' + settings.workspace + ' &amp;&amp; ' + args.join(' '));
+      expresso.stdout.on('data', function(data) {
+        return res.cyan(data);
+      });
+      expresso.stderr.on('data', function(data) {
+        return res.magenta(data);
+      });
+      return expresso.on('exit', function(code) {
+        return res.prompt();
+      });
+    };
+    paths = [].concat(module.paths, require.paths);
+    for (_i = 0, _len = paths.length; _i &lt; _len; _i++) {
+      p = paths[_i];
+      if (existsSync(p + '/expresso/bin/expresso')) {
+        return run(p);
+      }
+    }
+    res.magenta('Expresso not found').ln();
+    return res.prompt();
+  });
+  return shell.cmd('test :pattern', 'Run specific tests', function(req, res, next) {});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.shell.index.prototype" id="apidoc.module.shell.index.prototype">module shell.index.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.prototype.configure" id="apidoc.element.shell.index.prototype.configure">
+        function <span class="apidocSignatureSpan">shell.index.prototype.</span>configure
+        <span class="apidocSignatureSpan">(env, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">configure = function (env, fn) {
+  if (typeof env === 'function') {
+    fn = env;
+    env = 'all';
+  }
+  if (env === 'all' || env === this.settings.env) {
+    fn.call(this);
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+The example below illustrate how to code a simple Redis client.
+
+```javascript
+var shell = require('shell');
+// Initialization
+var app = new shell( { chdir: __dirname } )
+// Middleware registration
+app.<span class="apidocCodeKeywordSpan">configure</span>(function() {
+app.use(function(req, res, next){
+  app.client = require('redis').createClient()
+  next()
+});
+app.use(shell.history({
+  shell: app
+}));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.prototype.constructor" id="apidoc.element.shell.index.prototype.constructor">
+        function <span class="apidocSignatureSpan">shell.index.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Shell(settings) {
+  var _base, _base1, _base2, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6,
+    _this = this;
+  if (settings == null) {
+    settings = {};
+  }
+  if (!(this instanceof Shell)) {
+    return new Shell(settings);
+  }
+  EventEmitter.call(this);
+  this.tmp = {};
+  this.settings = settings;
+  if ((_ref = (_base = this.settings).prompt) == null) {
+    _base.prompt = '&gt;&gt; ';
+  }
+  if ((_ref1 = (_base1 = this.settings).stdin) == null) {
+    _base1.stdin = process.stdin;
+  }
+  if ((_ref2 = (_base2 = this.settings).stdout) == null) {
+    _base2.stdout = process.stdout;
+  }
+  this.set('env', (_ref3 = (_ref4 = this.settings.env) != null ? _ref4 : process.env.NODE_ENV) != null ? _ref3 : 'development');
+  this.set('command', typeof settings.command !== 'undefined' ? settings.command : process.argv.slice(2).join(' '));
+  this.stack = [];
+  this.styles = styles({
+    stdout: this.settings.stdout
+  });
+  process.on('beforeExit', function() {
+    return _this.emit('exit');
+  });
+  process.on('uncaughtException', function(e) {
+    _this.emit('exit', [e]);
+    _this.styles.red('Internal error, closing...').ln();
+    console.error(e.message);
+    console.error(e.stack);
+    return process.exit();
+  });
+  this.isShell = (_ref5 = this.settings.isShell) != null ? _ref5 : process.argv.length === 2;
+  if (this.isShell) {
+    this["interface"]();
+  }
+  if ((_ref6 = settings.workspace) == null) {
+    settings.workspace = utils.workspace();
+  }
+  if (settings.chdir === true) {
+    process.chdir(settings.workspace);
+  }
+  if (typeof settings.chdir === 'string') {
+    process.chdir(settings.chdir);
+  }
+  process.nextTick(function() {
+    var command, noPrompt;
+    if (_this.isShell) {
+      command = _this.set('command');
+      noPrompt = _this.set('noPrompt');
+      if (command) {
+        return _this.run(command);
+      } else if (!noPrompt) {
+        return _this.prompt();
+      }
+    } else {
+      command = _this.set('command');
+      if (command) {
+        return _this.run(command);
+      }
+    }
+  });
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.prototype.interface" id="apidoc.element.shell.index.prototype.interface">
+        function <span class="apidocSignatureSpan">shell.index.prototype.</span>interface
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">interface = function () {
+  if (this._interface != null) {
+    return this._interface;
+  }
+  return this._interface = readline.createInterface(this.settings.stdin, this.settings.stdout);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.prototype.prompt" id="apidoc.element.shell.index.prototype.prompt">
+        function <span class="apidocSignatureSpan">shell.index.prototype.</span>prompt
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prompt = function () {
+  var text;
+  if (this.isShell) {
+    text = this.styles.raw(this.settings.prompt, {
+      color: 'green'
+    });
+    return this["interface"]().question(text, this.run.bind(this));
+  } else {
+    this.styles.ln();
+    if (process.versions) {
+      return this.quit();
+    } else {
+      this.settings.stdout.destroySoon();
+      return this.settings.stdout.on('close', function() {
+        return process.exit();
+      });
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }));
+});
+// Command registration
+app.cmd('redis keys :pattern', 'Find keys', function(req, res, next){
+  app.client.keys(req.params.pattern, function(err, keys){
+    if(err){ return res.styles.red(err.message), next(); }
+    res.cyan(keys.join('\n')||'no keys');
+    res.<span class="apidocCodeKeywordSpan">prompt</span>();
+  });
+});
+// Event notification
+app.on('quit', function(){
+  app.client.quit();
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.prototype.quit" id="apidoc.element.shell.index.prototype.quit">
+        function <span class="apidocSignatureSpan">shell.index.prototype.</span>quit
+        <span class="apidocSignatureSpan">(params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">quit = function (params) {
+  this.emit('quit');
+  this["interface"]().close();
+  return this.settings.stdin.destroy();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if(err){ return res.styles.red(err.message), next(); }
+    res.cyan(keys.join('\n')||'no keys');
+    res.prompt();
+  });
+});
+// Event notification
+app.on('quit', function(){
+  app.client.<span class="apidocCodeKeywordSpan">quit</span>();
+});
+```
+
+Creating and Configuring a Shell
+--------------------------------
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.prototype.run" id="apidoc.element.shell.index.prototype.run">
+        function <span class="apidocSignatureSpan">shell.index.prototype.</span>run
+        <span class="apidocSignatureSpan">(command)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (command) {
+  var index, next, req, res, self;
+  command = command.trim();
+  this.emit('command', [command]);
+  this.emit(command, []);
+  self = this;
+  req = new Request(this, command);
+  res = new Response({
+    shell: this,
+    stdout: this.settings.stdout
+  });
+  index = 0;
+  next = function(err) {
+    var arity, layer, text;
+    layer = self.stack[index++];
+    if (!layer) {
+      if (err) {
+        return self.emit('error', err);
+      }
+      if (command !== '') {
+        text = "Command failed to execute " + command;
+        if (err) {
+          text += ": " + (err.message || err.name);
+        }
+        res.red(text);
+      }
+      return res.prompt();
+    }
+    arity = layer.handle.length;
+    if (err) {
+      if (arity === 4) {
+        self.emit('error', err);
+        return layer.handle(err, req, res, next);
+      } else {
+        return next(err);
+      }
+    } else if (arity &lt; 4) {
+      return layer.handle(req, res, next);
+    } else {
+      return next();
+    }
+  };
+  return next();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.prototype.set" id="apidoc.element.shell.index.prototype.set">
+        function <span class="apidocSignatureSpan">shell.index.prototype.</span>set
+        <span class="apidocSignatureSpan">(setting, val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (setting, val) {
+  if (!(val != null)) {
+    if (this.settings.hasOwnProperty(setting)) {
+      return this.settings[setting];
+    } else if (this.parent) {
+      return this.parent.set(setting);
+    }
+  } else {
+    this.settings[setting] = val;
+    return this;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var app = shell();
+app.configure(function() {
+  app.use(shell.history({shell: app}));
+  app.use(shell.completer({shell: app}));
+  app.use(shell.help({shell: app, introduction: true}));
+});
+app.configure('prod', function() {
+  app.<span class="apidocCodeKeywordSpan">set</span>('title', 'Production Mode');
+});
+```
+
+Shell settings
+--------------
+
+The constructor `shell` takes an optional object. Options are:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.index.prototype.use" id="apidoc.element.shell.index.prototype.use">
+        function <span class="apidocSignatureSpan">shell.index.prototype.</span>use
+        <span class="apidocSignatureSpan">(handle)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">use = function (handle) {
+  if (handle) {
+    this.stack.push({
+      route: null,
+      handle: handle
+    });
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var shell = require('shell');
+// Initialization
+var app = new shell( { chdir: __dirname } )
+// Middleware registration
+app.configure(function() {
+app.<span class="apidocCodeKeywordSpan">use</span>(function(req, res, next){
+  app.client = require('redis').createClient()
+  next()
+});
+app.use(shell.history({
+  shell: app
+}));
+app.use(shell.completer({
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.shell.routes" id="apidoc.module.shell.routes">module shell.routes</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.shell.routes.confirm" id="apidoc.element.shell.routes.confirm">
+        function <span class="apidocSignatureSpan">shell.routes.</span>confirm
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">confirm = function (message) {
+  return function(req, res, next) {
+    return req.confirm(message, true, function(confirmed) {
+      if (!confirmed) {
+        return res.prompt();
+      }
+      return next();
+    });
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var app = new shell();
+app.configure(function() {
+  app.use(shell.router({
+    shell: app
+  }));
+});
+app.cmd('install', [
+  shell.routes.<span class="apidocCodeKeywordSpan">confirm</span>('Do you confirm?'),
+  my_app.routes.download,
+  my_app.routes.configure
+]);
+```
+*/
+
+module.exports = function(message) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.routes.prompt" id="apidoc.element.shell.routes.prompt">
+        function <span class="apidocSignatureSpan">shell.routes.</span>prompt
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prompt = function (req, res, next) {
+  var message;
+  if (arguments.length === 1) {
+    message = arguments[0];
+    return function(req, res, next) {
+      res.white(message);
+      res.ln();
+      return res.prompt();
+    };
+  } else {
+    return res.prompt();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }));
+});
+// Command registration
+app.cmd('redis keys :pattern', 'Find keys', function(req, res, next){
+  app.client.keys(req.params.pattern, function(err, keys){
+    if(err){ return res.styles.red(err.message), next(); }
+    res.cyan(keys.join('\n')||'no keys');
+    res.<span class="apidocCodeKeywordSpan">prompt</span>();
+  });
+});
+// Event notification
+app.on('quit', function(){
+  app.client.quit();
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.routes.shellOnly" id="apidoc.element.shell.routes.shellOnly">
+        function <span class="apidocSignatureSpan">shell.routes.</span>shellOnly
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">shellOnly = function (req, res, next) {
+  if (!req.shell.isShell) {
+    res.red('Command may only be executed inside a running shell');
+    res.prompt();
+    return;
+  }
+  return next();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.shell.start_stop" id="apidoc.module.shell.start_stop">module shell.start_stop</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.shell.start_stop.file" id="apidoc.element.shell.start_stop.file">
+        function <span class="apidocSignatureSpan">shell.start_stop.</span>file
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">file = function (options, callback) {
+  var createDir, pidFileExists, start;
+  if (options.attach != null) {
+    console.log('Option attach was renamed to detached to be consistent with the spawn API');
+    options.detached = !options.attach;
+  }
+  if (!options.detached) {
+    return callback(null, null, false);
+  }
+  start = function() {
+    var dir, file;
+    if (options.pidfile) {
+      return pidFileExists();
+    }
+    dir = path.resolve(process.env['HOME'], '.node_shell');
+    file = md5(options.cmd);
+    options.pidfile = "" + dir + "/" + file + ".pid";
+    return exists(dir, function(dirExists) {
+      if (!dirExists) {
+        return createDir();
+      }
+      return pidFileExists();
+    });
+  };
+  createDir = function() {
+    return fs.mkdir(dir, 0x1c0, function(err) {
+      if (err) {
+        return callback(err);
+      }
+      return pidFileExists();
+    });
+  };
+  pidFileExists = function() {
+    return exists(options.pidfile, function(pidFileExists) {
+      return callback(null, options.pidfile, pidFileExists);
+    });
+  };
+  return start();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+if (!options.detached) {
+  if (options.pid == null) {
+    return new Error('Expect a pid property in attached mode');
+  }
+  return callback(null, options.pid);
+}
+return start_stop.<span class="apidocCodeKeywordSpan">file</span>(options, function(err, file, exists) {
+  if (!exists) {
+    return callback(null, false);
+  }
+  return fs.readFile(options.pidfile, 'ascii', function(err, pid) {
+    if (err) {
+      return callback(err);
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.start_stop.pid" id="apidoc.element.shell.start_stop.pid">
+        function <span class="apidocSignatureSpan">shell.start_stop.</span>pid
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pid = function (options, callback) {
+  if (options.attach != null) {
+    console.log('Option attach was renamed to attached to be consistent with the new spawn option');
+    options.detached = !options.attach;
+  }
+  if (!options.detached) {
+    if (options.pid == null) {
+      return new Error('Expect a pid property in attached mode');
+    }
+    return callback(null, options.pid);
+  }
+  return start_stop.file(options, function(err, file, exists) {
+    if (!exists) {
+      return callback(null, false);
+    }
+    return fs.readFile(options.pidfile, 'ascii', function(err, pid) {
+      if (err) {
+        return callback(err);
+      }
+      pid = pid.trim();
+      return callback(null, pid);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  options.detached = !options.attach;
+}
+if (options.detached) {
+  child = null;
+  cmdStdout = typeof options.stdout === 'string' ? options.stdout : '/dev/null';
+  cmdStderr = typeof options.stderr === 'string' ? options.stderr : '/dev/null';
+  check_pid = function() {
+    return start_stop.<span class="apidocCodeKeywordSpan">pid</span>(options, function(err, pid) {
+      if (!pid) {
+        return watch();
+      }
+      return start_stop.running(pid, function(err, pid) {
+        if (pid) {
+          return callback(new Error("Pid " + pid + " already running"));
+        }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.start_stop.running" id="apidoc.element.shell.start_stop.running">
+        function <span class="apidocSignatureSpan">shell.start_stop.</span>running
+        <span class="apidocSignatureSpan">(pid, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">running = function (pid, callback) {
+  return exec("ps -ef " + pid + " | grep -v PID", function(err, stdout, stderr) {
+    if (err &amp;&amp; err.code !== 1) {
+      return callback(err);
+    }
+    return callback(null, !err);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+cmdStdout = typeof options.stdout === 'string' ? options.stdout : '/dev/null';
+cmdStderr = typeof options.stderr === 'string' ? options.stderr : '/dev/null';
+check_pid = function() {
+  return start_stop.pid(options, function(err, pid) {
+    if (!pid) {
+      return watch();
+    }
+    return start_stop.<span class="apidocCodeKeywordSpan">running</span>(pid, function(err, pid) {
+      if (pid) {
+        return callback(new Error("Pid " + pid + " already running"));
+      }
+      if (options.strict) {
+        return callback(new Error("Pid file reference a dead process"));
+      } else {
+        return watch();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.start_stop.start" id="apidoc.element.shell.start_stop.start">
+        function <span class="apidocSignatureSpan">shell.start_stop.</span>start
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (options, callback) {
+  var c, check_pid, child, cmdStderr, cmdStdout, start, stderr, stdout, watch;
+  if (options.attach != null) {
+    console.log('Option attach was renamed to attached to be consistent with the new spawn option');
+    options.detached = !options.attach;
+  }
+  if (options.detached) {
+    child = null;
+    cmdStdout = typeof options.stdout === 'string' ? options.stdout : '/dev/null';
+    cmdStderr = typeof options.stderr === 'string' ? options.stderr : '/dev/null';
+    check_pid = function() {
+      return start_stop.pid(options, function(err, pid) {
+        if (!pid) {
+          return watch();
+        }
+        return start_stop.running(pid, function(err, pid) {
+          if (pid) {
+            return callback(new Error("Pid " + pid + " already running"));
+          }
+          if (options.strict) {
+            return callback(new Error("Pid file reference a dead process"));
+          } else {
+            return watch();
+          }
+        });
+      });
+    };
+    watch = function() {
+      var ignore, ioptions;
+      if (!options.watch) {
+        return start();
+      }
+      if (typeof options.watch !== 'string') {
+        options.watch = options.cwd || process.cwd;
+      }
+      ioptions = {
+        path: options.watch,
+        ignoreFiles: [".startstopignore"] || options.watchIgnoreFiles
+      };
+      console.log('ioptions', ioptions);
+      ignore = require('fstream-ignore');
+      ignore(ioptions).on('child', function(c) {
+        console.log(c.path);
+        return fs.watchFile(c.path, function(curr, prev) {
+          console.log(c.path);
+          return start_stop.stop(options, function(e) {
+            return start_stop.start(options, function(e) {
+              return console.log('restarted', e);
+            });
+          });
+        });
+      });
+      return start();
+    };
+    start = function() {
+      var cmd, info, pipe;
+      pipe = "&lt;/dev/null &gt;" + cmdStdout + " 2&gt;" + cmdStdout;
+      info = 'echo $? $!';
+      cmd = "" + options.cmd + " " + pipe + " &amp; " + info;
+      return child = exec(cmd, options, function(err, stdout, stderr) {
+        var code, msg, pid, _ref1;
+        _ref1 = stdout.split(' '), code = _ref1[0], pid = _ref1[1];
+        code = parseInt(code, 10);
+        pid = parseInt(pid, 10);
+        if (code !== 0) {
+          msg = "Process exit with code " + code;
+          return callback(new Error(msg));
+        }
+        return exists(path.dirname(options.pidfile), function(exists) {
+          if (!exists) {
+            return callback(new Error("Pid directory does not exist"));
+          }
+          return fs.writeFile(options.pidfile, '' + pid, function(err) {
+            return callback(null, pid);
+          });
+        });
+      });
+    };
+    return check_pid();
+  } else {
+    c = exec(options.cmd);
+    if (typeof options.stdout === 'string') {
+      stdout = fs.createWriteStream(options.stdout);
+    } else if (options.stdout !== null &amp;&amp; typeof options.stdout === 'object') {
+      stdout = options.stdout;
+    } else {
+      stdout = null;
+    }
+    if (typeof options.stderr === 'string') {
+      stdout = fs.createWriteStream(options.stderr);
+    } else if (options.stderr !== null &amp;&amp; typeof options.stderr === 'object') {
+      stderr = options.stderr;
+    } else {
+      stderr = null;
+    }
+    return process.nextTick(function() {
+      options.pid = c.pid;
+      return callback(null, c.pid);
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  console.log('ioptions', ioptions);
+  ignore = require('fstream-ignore');
+  ignore(ioptions).on('child', function(c) {
+    console.log(c.path);
+    return fs.watchFile(c.path, function(curr, prev) {
+      console.log(c.path);
+      return start_stop.stop(options, function(e) {
+        return start_stop.<span class="apidocCodeKeywordSpan">start</span>(options, function(e) {
+          return console.log('restarted', e);
+        });
+      });
+    });
+  });
+  return start();
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.start_stop.stop" id="apidoc.element.shell.start_stop.stop">
+        function <span class="apidocSignatureSpan">shell.start_stop.</span>stop
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function (options, callback) {
+  var kill;
+  if (options.attach != null) {
+    console.log('Option attach was renamed to attached to be consistent with the new spawn option');
+    options.detached = !options.attach;
+  }
+  if (typeof options === 'string' || typeof options === 'number') {
+    options = {
+      pid: parseInt(options, 10),
+      detached: false
+    };
+  }
+  kill = function(pid) {
+    var cmds;
+    cmds = "for i in `ps -ef | awk '$3 == '" + pid + "' { print $2 }'`\ndo\n  kill $i\ndone\nkill " + pid;
+    return exec(cmds, function(err, stdout, stderr) {
+      if (err) {
+        return callback(new Error("Unexpected exit code " + err.code));
+      }
+      options.pid = null;
+      return callback(null, true);
+    });
+  };
+  if (options.detached) {
+    return start_stop.pid(options, function(err, pid) {
+      if (err) {
+        return callback(err);
+      }
+      if (!pid) {
+        return callback(null, false);
+      }
+      return fs.unlink(options.pidfile, function(err) {
+        if (err) {
+          return callback(err);
+        }
+        return start_stop.running(pid, function(err, running) {
+          if (!running) {
+            if (options.strict) {
+              return callback(new Error("Pid file reference a dead process"));
+            } else {
+              return callback(null, false);
+            }
+          }
+          return kill(pid);
+        });
+      });
+    });
+  } else {
+    return kill(options.pid);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+console.log('ioptions', ioptions);
+ignore = require('fstream-ignore');
+ignore(ioptions).on('child', function(c) {
+  console.log(c.path);
+  return fs.watchFile(c.path, function(curr, prev) {
+    console.log(c.path);
+    return start_stop.<span class="apidocCodeKeywordSpan">stop</span>(options, function(e) {
+      return start_stop.start(options, function(e) {
+        return console.log('restarted', e);
+      });
+    });
+  });
+});
+return start();
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.shell.styles" id="apidoc.module.shell.styles">module shell.styles</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles.styles" id="apidoc.element.shell.styles.styles">
+        function <span class="apidocSignatureSpan">shell.</span>styles
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">styles = function (settings) {
+  var _ref;
+  if (settings == null) {
+    settings = {};
+  }
+  if (!(this instanceof Styles)) {
+    return new Styles(settings);
+  }
+  this.settings = settings;
+  this.settings.stdout = (_ref = settings.stdout) != null ? _ref : process.stdout;
+  this.current = {
+    weight: 'regular'
+  };
+  this.colors = colors;
+  this.bgcolors = bgcolors;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles.unstyle" id="apidoc.element.shell.styles.unstyle">
+        function <span class="apidocSignatureSpan">shell.styles.</span>unstyle
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unstyle = function (text) {
+  return text.replace(/\x1b.*?m/g, '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.shell.styles.prototype" id="apidoc.module.shell.styles.prototype">module shell.styles.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles.prototype.bgcolor" id="apidoc.element.shell.styles.prototype.bgcolor">
+        function <span class="apidocSignatureSpan">shell.styles.prototype.</span>bgcolor
+        <span class="apidocSignatureSpan">(bgcolor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bgcolor = function (bgcolor) {
+  if (bgcolor == null) {
+    bgcolor = 0;
+  }
+  this.print('\x1B[' + bgcolor + ';m39');
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles.prototype.black" id="apidoc.element.shell.styles.prototype.black">
+        function <span class="apidocSignatureSpan">shell.styles.prototype.</span>black
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">black = function (text) {
+  return this.color(color, text);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles.prototype.blue" id="apidoc.element.shell.styles.prototype.blue">
+        function <span class="apidocSignatureSpan">shell.styles.prototype.</span>blue
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">blue = function (text) {
+  return this.color(color, text);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles.prototype.bold" id="apidoc.element.shell.styles.prototype.bold">
+        function <span class="apidocSignatureSpan">shell.styles.prototype.</span>bold
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bold = function (text) {
+  return this.weight('bold', text);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles.prototype.color" id="apidoc.element.shell.styles.prototype.color">
+        function <span class="apidocSignatureSpan">shell.styles.prototype.</span>color
+        <span class="apidocSignatureSpan">(color, text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">color = function (color, text) {
+  this.print(text, {
+    color: color
+  });
+  if (!text) {
+    this.current.color = color;
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles.prototype.cyan" id="apidoc.element.shell.styles.prototype.cyan">
+        function <span class="apidocSignatureSpan">shell.styles.prototype.</span>cyan
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cyan = function (text) {
+  return this.color(color, text);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    introduction: true
+  }));
+});
+// Command registration
+app.cmd('redis keys :pattern', 'Find keys', function(req, res, next){
+  app.client.keys(req.params.pattern, function(err, keys){
+    if(err){ return res.styles.red(err.message), next(); }
+    res.<span class="apidocCodeKeywordSpan">cyan</span>(keys.join('\n')||'no keys');
+    res.prompt();
+  });
+});
+// Event notification
+app.on('quit', function(){
+  app.client.quit();
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles.prototype.green" id="apidoc.element.shell.styles.prototype.green">
+        function <span class="apidocSignatureSpan">shell.styles.prototype.</span>green
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">green = function (text) {
+  return this.color(color, text);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles.prototype.ln" id="apidoc.element.shell.styles.prototype.ln">
+        function <span class="apidocSignatureSpan">shell.styles.prototype.</span>ln
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ln = function () {
+  this.settings.stdout.write('\n');
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    app.cmd('cloud9 start', 'Start Cloud9', function(req, res, next) {
+return start_stop.start(settings, function(err, pid) {
+  var ip, message, port;
+  if (err) {
+    return next(err);
+  }
+  if (!pid) {
+    res.cyan('Cloud9 already started').<span class="apidocCodeKeywordSpan">ln</span>();
+    return res.prompt();
+  }
+  ip = settings.ip || '127.0.0.1';
+  port = settings.port || 3000;
+  message = "Cloud9 started http://" + ip + ":" + port;
+  res.cyan(message).ln();
+  return res.prompt();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles.prototype.magenta" id="apidoc.element.shell.styles.prototype.magenta">
+        function <span class="apidocSignatureSpan">shell.styles.prototype.</span>magenta
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">magenta = function (text) {
+  return this.color(color, text);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      });
+    });
+    app.cmd('cloud9 stop', 'Stop Cloud9', function(req, res, next) {
+      return start_stop.stop(settings, function(err, success) {
+        if (success) {
+          res.cyan('Cloud9 successfully stoped').ln();
+        } else {
+          res.<span class="apidocCodeKeywordSpan">magenta</span>('Cloud9 was not started').ln();
+        }
+        return res.prompt();
+      });
+    });
+    return next();
+  };
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles.prototype.nocolor" id="apidoc.element.shell.styles.prototype.nocolor">
+        function <span class="apidocSignatureSpan">shell.styles.prototype.</span>nocolor
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nocolor = function (text) {
+  return this.color(null, text);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles.prototype.print" id="apidoc.element.shell.styles.prototype.print">
+        function <span class="apidocSignatureSpan">shell.styles.prototype.</span>print
+        <span class="apidocSignatureSpan">(text, settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">print = function (text, settings) {
+  this.settings.stdout.write(this.raw(text, settings));
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles.prototype.println" id="apidoc.element.shell.styles.prototype.println">
+        function <span class="apidocSignatureSpan">shell.styles.prototype.</span>println
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">println = function (text) {
+  this.settings.stdout.write(text + '\n');
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+    return res.prompt();
+  };
+  shell.cmd('help', 'Show this message', shell.help.bind(shell));
+  shell.cmd('', shell.help.bind(shell));
+  if (shell.isShell &amp;&amp; settings.introduction) {
+    text = typeof settings.introduction === 'string' ? settings.introduction : 'Type "help" or press enter
+ for a list of commands';
+    return shell.styles.<span class="apidocCodeKeywordSpan">println</span>(text);
+  }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles.prototype.raw" id="apidoc.element.shell.styles.prototype.raw">
+        function <span class="apidocSignatureSpan">shell.styles.prototype.</span>raw
+        <span class="apidocSignatureSpan">(text, settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">raw = function (text, settings) {
+  var raw;
+  raw = '';
+  if (settings == null) {
+    settings = {};
+  }
+  if (settings.color !== null &amp;&amp; (settings.color || this.current.color)) {
+    raw += '\x1b[' + this.colors[settings.color || this.current.color] + 'm';
+  } else {
+    raw += '\x1b[39m';
+  }
+  switch (settings.weight || this.current.weight) {
+    case 'bold':
+      raw += '\x1b[1m';
+      break;
+    case 'regular':
+      raw += '\x1b[22m';
+      break;
+    default:
+      throw new Error('Invalid weight "' + weight + '" (expect "bold" or "regular")');
+  }
+  if (text) {
+    raw += text;
+    if (this.current.color &amp;&amp; this.current.color !== settings.color) {
+      raw += this.raw(null, this.current.color);
+    }
+    if (this.current.weight &amp;&amp; this.current.weight !== settings.weight) {
+      raw += this.raw(null, this.current.weight);
+    }
+  }
+  return raw;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+key_true = this.shell.settings.key_true.toLowerCase();
+key_false = this.shell.settings.key_false.toLowerCase();
+keyTrue = defaultTrue ? key_true.toUpperCase() : key_true;
+keyFalse = defaultTrue ? key_false : key_false.toUpperCase();
+msg += ' ';
+msg += "[" + keyTrue + keyFalse + "] ";
+question = this.shell.styles.<span class="apidocCodeKeywordSpan">raw</span>(msg, {
+  color: 'green'
+});
+return this.shell["interface"]().question(question, function(answer) {
+  var accepted, valid;
+  accepted = ['', key_true, key_false];
+  if (answer.substr(-1, 1) === '\n') {
+    answer = answer.substr(0, answer.length - 1);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles.prototype.red" id="apidoc.element.shell.styles.prototype.red">
+        function <span class="apidocSignatureSpan">shell.styles.prototype.</span>red
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">red = function (text) {
+  return this.color(color, text);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  shell: app,
+  introduction: true
+}));
+});
+// Command registration
+app.cmd('redis keys :pattern', 'Find keys', function(req, res, next){
+app.client.keys(req.params.pattern, function(err, keys){
+  if(err){ return res.styles.<span class="apidocCodeKeywordSpan">red</span>(err.message), next(); }
+  res.cyan(keys.join('\n')||'no keys');
+  res.prompt();
+});
+});
+// Event notification
+app.on('quit', function(){
+app.client.quit();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles.prototype.regular" id="apidoc.element.shell.styles.prototype.regular">
+        function <span class="apidocSignatureSpan">shell.styles.prototype.</span>regular
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">regular = function (text) {
+  return this.weight('regular', text);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles.prototype.reset" id="apidoc.element.shell.styles.prototype.reset">
+        function <span class="apidocSignatureSpan">shell.styles.prototype.</span>reset
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function (text) {
+  return this.print(null, {
+    color: null,
+    weight: 'regular'
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles.prototype.weight" id="apidoc.element.shell.styles.prototype.weight">
+        function <span class="apidocSignatureSpan">shell.styles.prototype.</span>weight
+        <span class="apidocSignatureSpan">(weight, text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">weight = function (weight, text) {
+  this.print(text, {
+    weight: weight
+  });
+  if (!text) {
+    this.current.weight = weight;
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles.prototype.white" id="apidoc.element.shell.styles.prototype.white">
+        function <span class="apidocSignatureSpan">shell.styles.prototype.</span>white
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">white = function (text) {
+  return this.color(color, text);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      }
+      if (k === 'stack') {
+        continue;
+      }
+      if (typeof v === 'function') {
+        continue;
+      }
+      res.magenta(k).<span class="apidocCodeKeywordSpan">white</span>(': ').red(v).ln();
+    }
+    return res.prompt();
+  };
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.styles.prototype.yellow" id="apidoc.element.shell.styles.prototype.yellow">
+        function <span class="apidocSignatureSpan">shell.styles.prototype.</span>yellow
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yellow = function (text) {
+  return this.color(color, text);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.shell.utils" id="apidoc.module.shell.utils">module shell.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.shell.utils.checkPort" id="apidoc.element.shell.utils.checkPort">
+        function <span class="apidocSignatureSpan">shell.utils.</span>checkPort
+        <span class="apidocSignatureSpan">(port, host, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">checkPort = function (port, host, callback) {
+  var cmd;
+  cmd = exec("nc " + host + " " + port + " &lt; /dev/null");
+  return cmd.on('exit', function(code) {
+    if (code === 0) {
+      return callback(true);
+    }
+    if (code === 1) {
+      return callback(false);
+    }
+    return callback(new Error('The nc (or netcat) utility is required'));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.utils.flatten" id="apidoc.element.shell.utils.flatten">
+        function <span class="apidocSignatureSpan">shell.utils.</span>flatten
+        <span class="apidocSignatureSpan">(arr, ret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flatten = function (arr, ret) {
+  var i, _i, _ref;
+  if (ret == null) {
+    ret = [];
+  }
+  for (i = _i = 0, _ref = arr.length; 0 &lt;= _ref ? _i &lt; _ref : _i &gt; _ref; i = 0 &lt;= _ref ? ++_i : --_i) {
+    if (Array.isArray(arr[i])) {
+      this.flatten(arr[i], ret);
+    } else {
+      ret.push(arr[i]);
+    }
+  }
+  return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+flatten: function(arr, ret) {
+  var i, _i, _ref;
+  if (ret == null) {
+    ret = [];
+  }
+  for (i = _i = 0, _ref = arr.length; 0 &lt;= _ref ? _i &lt; _ref : _i &gt; _ref; i = 0 &lt;= _ref ? ++_i : --_i) {
+    if (Array.isArray(arr[i])) {
+      this.<span class="apidocCodeKeywordSpan">flatten</span>(arr[i], ret);
+    } else {
+      ret.push(arr[i]);
+    }
+  }
+  return ret;
+},
+workspace: function() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.shell.utils.workspace" id="apidoc.element.shell.utils.workspace">
+        function <span class="apidocSignatureSpan">shell.utils.</span>workspace
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">workspace = function () {
+  var dir, dirs, _i, _len;
+  dirs = require('module')._nodeModulePaths(process.argv[1]);
+  for (_i = 0, _len = dirs.length; _i &lt; _len; _i++) {
+    dir = dirs[_i];
+    if (existsSync(dir) || existsSync(path.normalize(dir + '/../package.json'))) {
+      return path.normalize(dir + '/..');
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
